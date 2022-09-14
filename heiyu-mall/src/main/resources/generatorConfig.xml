@@ -6,7 +6,7 @@
     <!-- 配置文件，放在resource目录下即可 -->
     <!--数据库驱动个人配置-->
     <classPathEntry
-            location="D:\codefactory\HeiyuMall\heiyu-mall\src\main\resources\mysql-connector-java-8.0.18.jar"/>
+            location=".\src\main\resources\mysql-connector-java-8.0.18.jar"/>
     <context id="MysqlTables" targetRuntime="MyBatis3">
         <property name="autoDelimitKeywords" value="true"/>
         <!--可以使用``包括字段名，避免字段名与sql保留字冲突报错-->
