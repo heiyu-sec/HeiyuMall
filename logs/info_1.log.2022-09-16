@@ -1,0 +1,25 @@
+[10:52:15:173] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) - Starting MallApplication on sectrend with PID 23500 (D:\codefactory\HeiyuMall\heiyu-mall\target\classes started by sectrend1 in D:\codefactory\HeiyuMall)
+[10:52:15:175] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:651) - No active profile set, falling back to default profiles: default
+[10:52:15:821] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:92) - Tomcat initialized with port(s): 8083 (http)
+[10:52:15:826] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-8083"]
+[10:52:15:827] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[10:52:15:827] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.27]
+[10:52:15:871] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+[10:52:15:872] [INFO] - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 653 ms
+[10:52:16:223] [INFO] - org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+[10:52:16:372] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-8083"]
+[10:52:16:383] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:204) - Tomcat started on port(s): 8083 (http) with context path ''
+[10:52:16:385] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) - Started MallApplication in 1.432 seconds (JVM running for 3.197)
+[10:52:34:059] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[10:52:34:059] [INFO] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+[10:52:34:065] [INFO] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547) - Completed initialization in 6 ms
+[10:52:34:080] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/test
+[10:52:34:080] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:GET
+[10:52:34:080] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : []
+[10:52:34:103] [INFO] - com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:110) - imooc_mall_datasource - Starting...
+[10:52:34:196] [INFO] - com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:123) - imooc_mall_datasource - Start completed.
+[10:52:34:279] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"id":1,"username":"1","password":"1","personalizedSignature":"3","role":1,"createTime":1576435053000,"updateTime":1581244872000}
+[10:57:38:799] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/test
+[10:57:38:799] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:GET
+[10:57:38:799] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : []
+[10:57:38:805] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"id":1,"username":"1","password":"1","personalizedSignature":"3","role":1,"createTime":1576435053000,"updateTime":1581244872000}
