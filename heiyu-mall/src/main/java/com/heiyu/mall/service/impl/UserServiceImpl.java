@@ -1,5 +1,7 @@
 package com.heiyu.mall.service.impl;
 
+import com.heiyu.mall.exctption.ImoocMallException;
+import com.heiyu.mall.exctption.imoocMailExceptionEnum;
 import com.heiyu.mall.model.dao.UserMapper;
 import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.service.UserService;
@@ -21,11 +23,20 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void register(String userName, String password) {
+    public void register(String userName, String password) throws ImoocMallException {
         //查询用户名是否存在，不允许重名
       User result=  userMapper.selectByName(userName);
       if(result != null){
-          
+            throw new ImoocMallException(imoocMailExceptionEnum.NAME_EXISTED);
       }
+
+      //写到数据库
+        User user= new User();
+        user.setUsername(userName);
+        user.setPassword(password);
+        int count = userMapper.insertSelective(user);
+        if(count==0){
+            throw new ImoocMallException(imoocMailExceptionEnum.INSERT_FAILED);
+        }
     }
 }

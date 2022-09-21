@@ -1,6 +1,7 @@
 package com.heiyu.mall.controller;
 
 import com.heiyu.mall.common.ApiRestResponse;
+import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.imoocMailExceptionEnum;
 import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.service.UserService;
@@ -27,8 +28,8 @@ public class UserController {
     }
     @PostMapping("/register")
     @ResponseBody
-    public ApiRestResponse register(@RequestParam String username, @RequestParam("password") String password){
-        if (StringUtils.isEmptyOrWhitespaceOnly(username)){
+    public ApiRestResponse register(@RequestParam("userName") String userName, @RequestParam("password") String password) throws ImoocMallException {
+        if (StringUtils.isEmptyOrWhitespaceOnly(userName)){
             return ApiRestResponse.error(imoocMailExceptionEnum.NEED_USER_NAME);
         }
         if (StringUtils.isEmptyOrWhitespaceOnly(password)){
@@ -36,7 +37,9 @@ public class UserController {
         }
         //密码长度不能少于8为
         if(password.length()<8){
-            return ApiRestResponse.error(imoocMailExceptionEnum.PASSWORD_TOO_SHORT)
+            return ApiRestResponse.error(imoocMailExceptionEnum.PASSWORD_TOO_SHORT);
         }
+        userService.register(userName,password);
+        return  ApiRestResponse.success();
     }
 }

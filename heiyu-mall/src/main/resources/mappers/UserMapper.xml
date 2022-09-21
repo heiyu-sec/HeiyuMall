@@ -114,10 +114,10 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByName" parameterMap="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List"></include>
-    form imooc_mall_user
+    from imooc_mall_user
     where username=#{userName,jdbcType=VARCHAR}
   </select>
 </mapper>
