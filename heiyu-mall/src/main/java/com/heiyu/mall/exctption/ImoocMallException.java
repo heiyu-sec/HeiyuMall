@@ -13,7 +13,7 @@ public class ImoocMallException extends Exception {
         this.message=message;
     }
 
-    public ImoocMallException(imoocMailExceptionEnum exceptionEnum){
+    public ImoocMallException(ImoocMallExceptionEnum exceptionEnum){
         this(exceptionEnum.getCode(),exceptionEnum.getMsg());
     }
 

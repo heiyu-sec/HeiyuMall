@@ -1,7 +1,7 @@
 package com.heiyu.mall.common;
 
 
-import com.heiyu.mall.exctption.imoocMailExceptionEnum;
+import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 
 /**
  * 描述：     通用返回对象
@@ -46,7 +46,7 @@ public class ApiRestResponse<T> {
         return new ApiRestResponse<>(code,msg);
     }
 
-    public static <T> ApiRestResponse<T> error(imoocMailExceptionEnum ex){
+    public static <T> ApiRestResponse<T> error(ImoocMallExceptionEnum ex){
         return new ApiRestResponse<>(ex.getCode(),ex.getMsg());
     }
 
