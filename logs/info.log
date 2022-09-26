@@ -1,4 +1,2 @@
-[09:56:54:567] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=14h16m14s981ms659µs900ns).
-[10:35:54:811] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/register
-[10:35:54:812] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
-[10:35:54:812] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [mumu, 12345678]
+[09:45:42:984] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=2d15h46m23s231ms47µs).
+[13:36:51:109] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=4m32s341ms393µs600ns).

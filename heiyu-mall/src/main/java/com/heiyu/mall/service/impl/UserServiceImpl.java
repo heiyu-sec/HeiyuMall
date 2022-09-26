@@ -5,8 +5,11 @@ import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.model.dao.UserMapper;
 import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.service.UserService;
+import com.heiyu.mall.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * 描述：     UserService实现类
@@ -23,7 +26,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void register(String userName, String password) throws ImoocMallException {
+    public void register(String userName, String password) throws ImoocMallException, NoSuchAlgorithmException {
         //查询用户名是否存在，不允许重名
       User result=  userMapper.selectByName(userName);
       if(result != null){
@@ -33,7 +36,8 @@ public class UserServiceImpl implements UserService {
       //写到数据库
         User user= new User();
         user.setUsername(userName);
-        user.setPassword(password);
+        //user.setPassword(password);
+        user.setPassword(MD5Utils.getMD5Str(password));
         int count = userMapper.insertSelective(user);
         if(count==0){
             throw new ImoocMallException(ImoocMallExceptionEnum.INSERT_FAILED);
