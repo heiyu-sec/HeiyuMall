@@ -1,5 +1,6 @@
 package com.heiyu.mall.service.impl;
 
+import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.model.dao.UserMapper;
@@ -42,5 +43,19 @@ public class UserServiceImpl implements UserService {
         if(count==0){
             throw new ImoocMallException(ImoocMallExceptionEnum.INSERT_FAILED);
         }
+    }
+    @Override
+    public User login(String userName, String password) throws ImoocMallException {
+        String md5Password = null;
+        try {
+            md5Password = MD5Utils.getMD5Str(password, Constant.ICODE);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        User user = userMapper.selectLogin(userName, md5Password);
+        if (user == null) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_PASSWORD);
+        }
+        return user;
     }
 }

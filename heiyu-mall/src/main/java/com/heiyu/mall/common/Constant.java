@@ -5,4 +5,5 @@ package com.heiyu.mall.common;
  */
 public class Constant {
     public static final String SALT="34dsdfDDD,0sss8";
+    public static final String IMOOC_MALL_USER = "imooc_mall_user";
 }
