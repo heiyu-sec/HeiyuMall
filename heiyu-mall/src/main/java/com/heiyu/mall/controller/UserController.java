@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 /**
  * 描述：     用户控制器
@@ -67,5 +68,23 @@ public class UserController {
         user.setPassword(null);
         session.setAttribute(Constant.IMOOC_MALL_USER, user);
         return ApiRestResponse.success(user);
+    }
+
+    /**
+     * 更新个性签名
+     */
+    @PostMapping("/user/update")
+    @ResponseBody
+    public ApiRestResponse updateUserInfo(HttpSession session, @RequestParam String signature)
+            throws ImoocMallException {
+        User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        if (currentUser == null) {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_LOGIN);
+        }
+        User user = new User();
+        user.setId(currentUser.getId());
+        user.setPersonalizedSignature(signature);
+        userService.updateInformation(user);
+        return ApiRestResponse.success();
     }
 }
