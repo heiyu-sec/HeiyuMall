@@ -34,4 +34,4 @@ build/
 .vscode/
 
 ##配置文件##
-*..properties
+*.properties
