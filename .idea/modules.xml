@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HeiyuMall.iml" filepath="$PROJECT_DIR$/.idea/HeiyuMall.iml" />
       <module fileurl="file://$PROJECT_DIR$/heiyu-mall/heiyu-mall.iml" filepath="$PROJECT_DIR$/heiyu-mall/heiyu-mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heiyu-mall/mall.iml" filepath="$PROJECT_DIR$/heiyu-mall/mall.iml" />
     </modules>
   </component>
 </project>
