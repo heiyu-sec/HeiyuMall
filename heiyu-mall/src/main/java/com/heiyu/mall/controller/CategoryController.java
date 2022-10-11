@@ -5,13 +5,16 @@ import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.model.request.AddCategoryReq;
+import com.heiyu.mall.service.CategoryService;
 import com.heiyu.mall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 /**
  * 描述：     目录Controller
@@ -21,21 +24,30 @@ public class CategoryController {
     @Autowired
     UserService userService;
 
-    @PostMapping("admin/catgory/add")
-    @ResponseBody
-    public ApiRestResponse addCategory(HttpSession session, AddCategoryReq addCategoryReq){
-            if(addCategoryReq.getName()==null||addCategoryReq.getParentId()==null||addCategoryReq.getOrderNum()==null||addCategoryReq.getType()==null){
-                return ApiRestResponse.error(ImoocMallExceptionEnum.PARA_NOT_NULL);
-            }
-        User currentUser= (User)session.getAttribute(Constant.IMOOC_MALL_USER);
-            if(currentUser ==null){
-                return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_LOGIN);
-            }
-            boolean adminRole= userService.checkAdminRole(currentUser);
-                if(adminRole){
+    @Autowired
+    CategoryService categoryService;
 
-                }else {
-                    return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_ADMIN)
-                }
+    /**
+     * 后台添加目录
+     */
+
+    @PostMapping("admin/category/add")
+    @ResponseBody
+    public ApiRestResponse addCategory(HttpSession session,
+                                       @Valid @RequestBody AddCategoryReq addCategoryReq) {
+        User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        if (currentUser == null) {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_LOGIN);
+        }
+        //校验是否是管理员
+        boolean adminRole = userService.checkAdminRole(currentUser);
+        if (adminRole) {
+            //是管理员，执行操作
+            categoryService.add(addCategoryReq);
+            return ApiRestResponse.success();
+        } else {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_ADMIN);
+        }
     }
+
 }

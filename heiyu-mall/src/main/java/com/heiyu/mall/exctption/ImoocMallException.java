@@ -4,7 +4,7 @@ package com.heiyu.mall.exctption;
 /**
  * 描述：     统一异常
  */
-public class ImoocMallException extends Exception {
+public class ImoocMallException extends RuntimeException {
     private final Integer code;
     private final String message;
 

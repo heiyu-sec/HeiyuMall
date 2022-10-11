@@ -1,1 +1,12 @@
-[04:40:32:020] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=6h37m20s652ms53µs100ns).
+[11:43:10:360] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) - Starting MallApplication on sectrend with PID 14044 (D:\codefactory\HeiyuMall\heiyu-mall\target\classes started by sectrend1 in D:\codefactory\HeiyuMall)
+[11:43:10:364] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:651) - No active profile set, falling back to default profiles: default
+[11:43:11:097] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:92) - Tomcat initialized with port(s): 8083 (http)
+[11:43:11:103] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-8083"]
+[11:43:11:103] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[11:43:11:103] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.27]
+[11:43:11:152] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+[11:43:11:153] [INFO] - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 741 ms
+[11:43:11:576] [INFO] - org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+[11:43:11:759] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-8083"]
+[11:43:11:773] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:204) - Tomcat started on port(s): 8083 (http) with context path ''
+[11:43:11:775] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) - Started MallApplication in 1.641 seconds (JVM running for 3.29)
