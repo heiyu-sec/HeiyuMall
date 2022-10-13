@@ -9,14 +9,14 @@ import javax.validation.constraints.Size;
  */
 public class AddCategoryReq {
     @Size(min = 2,max = 5)
-    @NotNull
+    @NotNull(message = "name不能为null")
     private String name;
-    @NotNull
+    @NotNull(message = "type不能为null")
     @Max(3)
     private Integer type;
-    @NotNull
+    @NotNull(message = "parentId不能为null")
     private Integer parentId;
-    @NotNull
+    @NotNull(message = "orderNum不能为null")
     private Integer orderNum;
 
     public String getName() {
