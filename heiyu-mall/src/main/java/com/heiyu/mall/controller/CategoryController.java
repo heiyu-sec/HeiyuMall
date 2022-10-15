@@ -7,6 +7,7 @@ import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.model.request.AddCategoryReq;
 import com.heiyu.mall.service.CategoryService;
 import com.heiyu.mall.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ public class CategoryController {
     /**
      * 后台添加目录
      */
-
+    @ApiOperation("后台添加目录")
     @PostMapping("admin/category/add")
     @ResponseBody
     public ApiRestResponse addCategory(HttpSession session,
