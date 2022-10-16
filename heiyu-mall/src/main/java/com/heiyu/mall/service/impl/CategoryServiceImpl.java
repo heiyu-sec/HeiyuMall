@@ -24,7 +24,7 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = new Category();
         BeanUtils.copyProperties(addCategoryReq,category);
         Category categoryOld = categoryMapper.selectByName(addCategoryReq.getName());
-        if(category!=null){
+        if(categoryOld!=null){
             throw new ImoocMallException(ImoocMallExceptionEnum.NAME_EXISTED);
         }
         int count = categoryMapper.insertSelective(category);
