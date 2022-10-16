@@ -37,7 +37,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void update(Category updateCategory){
         if (updateCategory.getName()!=null) {
             Category categoryOld = categoryMapper.selectByName(updateCategory.getName());
-            if (categoryOld !=null&&categoryOld.getId().equals(updateCategory.getId())){
+            if (categoryOld !=null&&!categoryOld.getId().equals(updateCategory.getId())){
                 throw new ImoocMallException(ImoocMallExceptionEnum.NAME_EXISTED);
             }
         }
