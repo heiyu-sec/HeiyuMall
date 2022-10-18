@@ -74,4 +74,12 @@ public class CategoryController {
         }
     }
 
+    @ApiOperation("后台删除目录")
+    @PostMapping("admin/category/delete")
+    @ResponseBody
+    public ApiRestResponse deleteCategory(){
+        return null;
+
+    }
+
 }
