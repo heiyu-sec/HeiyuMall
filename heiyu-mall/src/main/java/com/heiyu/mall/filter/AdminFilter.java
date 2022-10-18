@@ -39,11 +39,7 @@ public class AdminFilter implements Filter {
         User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
         if (currentUser == null) {
             PrintWriter out = new HttpServletResponseWrapper((HttpServletResponse) servletResponse).getWriter();
-            out.write("{\\n\"\n" +
-                    "                    + \"    \\\"status\\\": 10007,\\n\"\n" +
-                    "                    + \"    \\\"msg\\\": \\\"NEED_LOGIN\\\",\\n\"\n" +
-                    "                    + \"    \\\"data\\\": null\\n\"\n" +
-                    "                    + \"}");
+            out.write("{\"status\" : 10007, \"msg\" : \"NEED_LOGIN\", \"data\" : null}");
             out.flush();
             out.close();
             return;
@@ -56,11 +52,7 @@ public class AdminFilter implements Filter {
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             PrintWriter out = new HttpServletResponseWrapper((HttpServletResponse) servletResponse).getWriter();
-            out.write("{\n" +
-                    "\t\"status\":10007,\n" +
-                    "\t\"msg\":\"NEED_LOGIN\",\n" +
-                    "\t\"data\":null\n" +
-                    "}");
+            out.write("{\"status\" : 10007, \"msg\" : \"NEED_LOGIN\", \"data\" : null}");
             out.flush();
             out.close();
             return;
