@@ -2,11 +2,12 @@ package com.heiyu.mall.model.vo;
 
 import com.heiyu.mall.model.pojo.Category;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class CategoryVO {
+public class CategoryVO implements Serializable {
     private Integer id;
 
     private String name;

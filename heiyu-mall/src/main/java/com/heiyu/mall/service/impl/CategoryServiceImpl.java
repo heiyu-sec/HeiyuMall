@@ -14,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import springfox.documentation.annotations.Cacheable;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -78,13 +79,14 @@ public class CategoryServiceImpl implements CategoryService {
 
     }
     @Override
+    @Cacheable(value = "listCategoryForCustomer")
     public List<CategoryVO> listCategoryForCustomer(){
         ArrayList<CategoryVO> categoryVOArrayList = new ArrayList<>();
         recursivlyFindCategories(categoryVOArrayList,0);
         return categoryVOArrayList;
     }
 
-    @Override
+
     public void recursivlyFindCategories(List<CategoryVO> categoryVOArrayList, Integer parentId){
             //  递归获取所有子类别，并组成目录树
         List<Category> categoryList = categoryMapper.selectCategoriesByParentId(parentId);
