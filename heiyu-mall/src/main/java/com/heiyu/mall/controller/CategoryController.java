@@ -1,5 +1,6 @@
 package com.heiyu.mall.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
@@ -82,5 +83,11 @@ public class CategoryController {
          categoryService.delete(id);
         return ApiRestResponse.success();
     }
-
+    @ApiOperation("后台目录")
+    @PostMapping("admin/category/list")
+    @ResponseBody
+    public ApiRestResponse listCategoryForAdmin(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
+        PageInfo pageInfo = categoryService.listForAdmin(pageNum, pageSize);
+        return ApiRestResponse.success(pageInfo);
+    }
 }
