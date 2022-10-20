@@ -13,7 +13,10 @@ import com.heiyu.mall.service.CategoryService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -73,5 +76,26 @@ public class CategoryServiceImpl implements CategoryService {
         return pageInfo;
 
 
+    }
+    @Override
+    public List<CategoryVO> listCategoryForCustomer(){
+        ArrayList<CategoryVO> categoryVOArrayList = new ArrayList<>();
+        recursivlyFindCategories(categoryVOArrayList,0);
+        return categoryVOArrayList;
+    }
+
+    @Override
+    public void recursivlyFindCategories(List<CategoryVO> categoryVOArrayList, Integer parentId){
+            //  递归获取所有子类别，并组成目录树
+        List<Category> categoryList = categoryMapper.selectCategoriesByParentId(parentId);
+        if (!CollectionUtils.isEmpty(categoryList)){
+            for (int i = 0; i < categoryList.size(); i++) {
+                Category category =  categoryList.get(i);
+                CategoryVO categoryVO = new CategoryVO();
+                BeanUtils.copyProperties(category,categoryVO);
+                categoryVOArrayList.add(categoryVO);
+                recursivlyFindCategories(categoryVO.getChildCategory(),categoryVO.getId());
+            }
+        }
     }
 }

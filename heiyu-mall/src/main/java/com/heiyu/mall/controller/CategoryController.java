@@ -8,6 +8,7 @@ import com.heiyu.mall.model.pojo.Category;
 import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.model.request.AddCategoryReq;
 import com.heiyu.mall.model.request.UpdateCategoryReq;
+import com.heiyu.mall.model.vo.CategoryVO;
 import com.heiyu.mall.service.CategoryService;
 import com.heiyu.mall.service.UserService;
 import io.swagger.annotations.ApiOperation;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * 描述：     目录Controller
@@ -83,11 +85,19 @@ public class CategoryController {
          categoryService.delete(id);
         return ApiRestResponse.success();
     }
-    @ApiOperation("后台目录")
+    @ApiOperation("后台目录列表")
     @PostMapping("admin/category/list")
     @ResponseBody
     public ApiRestResponse listCategoryForAdmin(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
         PageInfo pageInfo = categoryService.listForAdmin(pageNum, pageSize);
         return ApiRestResponse.success(pageInfo);
+    }
+
+    @ApiOperation("前台目录列表")
+    @PostMapping("category/list")
+    @ResponseBody
+    public ApiRestResponse listCategoryForCustomer(){
+        List<CategoryVO> categoryVOS = categoryService.listCategoryForCustomer();
+        return ApiRestResponse.success(categoryVOS);
     }
 }
