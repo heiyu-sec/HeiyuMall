@@ -3,6 +3,7 @@ package com.heiyu.mall.service;
 import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.model.pojo.Category;
 import com.heiyu.mall.model.request.AddCategoryReq;
+import com.heiyu.mall.model.request.AddProductReq;
 import com.heiyu.mall.model.vo.CategoryVO;
 
 import java.util.List;
@@ -12,4 +13,5 @@ import java.util.List;
  */
 public interface ProductService {
 
+    void add(AddProductReq addProductReq);
 }
