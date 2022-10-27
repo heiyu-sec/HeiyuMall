@@ -27,7 +27,11 @@ import java.util.Arrays;
 public class UserController {
     @Autowired
     UserService userService;
-
+    @GetMapping("/")
+    @ResponseBody
+    public User personal2Page(){
+        return userService.getUser();
+    }
     @GetMapping("/test")
     @ResponseBody
     public User personalPage(){
