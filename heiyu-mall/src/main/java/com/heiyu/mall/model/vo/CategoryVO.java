@@ -87,4 +87,6 @@ public class CategoryVO implements Serializable {
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    
 }
