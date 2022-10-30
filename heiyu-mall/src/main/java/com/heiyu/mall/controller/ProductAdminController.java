@@ -50,11 +50,11 @@ public class ProductAdminController {
                 throw new ImoocMallException(ImoocMallExceptionEnum.MKDIR_FAILED);
             }
         }
-            try {
-                file.transferTo(destFile);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            file.transferTo(destFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try {
             return ApiRestResponse.success(getHost(new URI(httpServletRequest.getRequestURL()+""))+"/images/"+newFileName);
         } catch (URISyntaxException e) {
