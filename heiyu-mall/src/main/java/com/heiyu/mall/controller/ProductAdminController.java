@@ -71,4 +71,6 @@ public class ProductAdminController {
         }
         return effectiveURI;
     }
+
+    public ApiRestResponse updateProduct()
 }
