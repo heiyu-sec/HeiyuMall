@@ -4,9 +4,12 @@ import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
+import com.heiyu.mall.model.pojo.Product;
 import com.heiyu.mall.model.request.AddProductReq;
+import com.heiyu.mall.model.request.UpdateProductReq;
 import com.heiyu.mall.service.ProductService;
 import io.swagger.annotations.ApiResponse;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -72,5 +75,11 @@ public class ProductAdminController {
         return effectiveURI;
     }
 
-    public ApiRestResponse updateProduct()
+    @PostMapping("admin/product/update")
+    public ApiRestResponse updateProduct(@Valid@RequestBody UpdateProductReq updateProductReq){
+        Product product = new Product();
+        BeanUtils.copyProperties(updateProductReq,product);
+        productService.update(product);
+        return ApiRestResponse.success();
+    }
 }

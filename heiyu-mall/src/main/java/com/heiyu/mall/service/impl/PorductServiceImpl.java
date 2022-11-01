@@ -32,4 +32,19 @@ public class PorductServiceImpl implements ProductService {
         }
 
     }
+
+    @Override
+    public void update(Product updateProduct){
+        Product productOld = productMapper.selectByName(updateProduct.getName());
+        //同名且不同ID， 不能修改
+        if(productOld!=null && !productOld.getId().equals(updateProduct.getId())){
+            throw new ImoocMallException(ImoocMallExceptionEnum.NAME_EXISTED);
+        }
+        int count = productMapper.updateByPrimaryKeySelective(updateProduct);
+        if(count==0){
+            throw new ImoocMallException(ImoocMallExceptionEnum.UPDATE_FAILED);
+        }
+
+    }
+
 }

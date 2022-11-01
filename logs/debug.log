@@ -1,456 +1,210 @@
-[10:30:13:345] [DEBUG] - org.springframework.web.servlet.DispatcherServlet.initMultipartResolver(DispatcherServlet.java:526) - Detected StandardServletMultipartResolver
-[10:30:13:381] [DEBUG] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:542) - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-[10:53:01:128] [DEBUG] - org.springframework.core.log.LogFormatUtils.traceDebug(LogFormatUtils.java:91) - POST "/category/list", parameters={}
-[10:53:01:131] [DEBUG] - springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping.lookupHandlerMethod(PropertySourcedRequestMappingHandlerMapping.java:108) - looking up handler for path: /category/list
-[10:53:01:136] [DEBUG] - org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:412) - Mapped to com.heiyu.mall.controller.CategoryController#listCategoryForCustomer()
-[10:53:01:167] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:175] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ed078d] was not registered for synchronization because synchronization is not active
-[10:53:01:183] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:184] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1020) - imooc_mall_datasource - configuration:
-[10:53:01:186] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - allowPoolSuspension.............false
-[10:53:01:186] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - autoCommit......................true
-[10:53:01:186] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - catalog.........................none
-[10:53:01:186] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - connectionInitSql...............none
-[10:53:01:186] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - connectionTestQuery.............none
-[10:53:01:187] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - connectionTimeout...............30000
-[10:53:01:187] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - dataSource......................none
-[10:53:01:187] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - dataSourceClassName.............none
-[10:53:01:187] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - dataSourceJNDI..................none
-[10:53:01:187] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - dataSourceProperties............{password=<masked>}
-[10:53:01:187] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - driverClassName................."com.mysql.cj.jdbc.Driver"
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - healthCheckProperties...........{}
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - healthCheckRegistry.............none
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - idleTimeout.....................600000
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - initializationFailTimeout.......1
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - isolateInternalQueries..........false
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - jdbcUrl.........................jdbc:mysql://127.0.0.1:3306/imooc_mall?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - leakDetectionThreshold..........0
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - maxLifetime.....................1800000
-[10:53:01:188] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - maximumPoolSize.................10
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - metricRegistry..................none
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - metricsTrackerFactory...........none
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - minimumIdle.....................10
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - password........................<masked>
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - poolName........................"imooc_mall_datasource"
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - readOnly........................false
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - registerMbeans..................false
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - scheduledExecutor...............none
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - schema..........................none
-[10:53:01:189] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - threadFactory...................internal
-[10:53:01:190] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - transactionIsolation............default
-[10:53:01:190] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - username........................"root"
-[10:53:01:190] [DEBUG] - com.zaxxer.hikari.HikariConfig.logConfiguration(HikariConfig.java:1052) - validationTimeout...............5000
-[10:53:01:300] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:566) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a508a90
-[10:53:01:305] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1230127285 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:309] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:327] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 0(Integer)
-[10:53:01:346] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 6
-[10:53:01:350] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5ed078d]
-[10:53:01:355] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:355] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@33053ad8] was not registered for synchronization because synchronization is not active
-[10:53:01:355] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:356] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@126395723 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:356] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:356] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 3(Integer)
-[10:53:01:357] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 5
-[10:53:01:357] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@33053ad8]
-[10:53:01:357] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:358] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cb23f3d] was not registered for synchronization because synchronization is not active
-[10:53:01:358] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:358] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1859282205 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:358] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:358] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 4(Integer)
-[10:53:01:360] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
-[10:53:01:360] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2cb23f3d]
-[10:53:01:360] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:360] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e3743cd] was not registered for synchronization because synchronization is not active
-[10:53:01:360] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:360] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1136771297 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:360] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:361] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 19(Integer)
-[10:53:01:361] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:361] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e3743cd]
-[10:53:01:362] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:362] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b5a9f2c] was not registered for synchronization because synchronization is not active
-[10:53:01:362] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:362] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@114399342 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:362] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:362] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 11(Integer)
-[10:53:01:363] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:364] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b5a9f2c]
-[10:53:01:364] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:364] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e01fa36] was not registered for synchronization because synchronization is not active
-[10:53:01:364] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:366] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@557691173 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:366] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:366] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 12(Integer)
-[10:53:01:367] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:367] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e01fa36]
-[10:53:01:367] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:367] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60353b] was not registered for synchronization because synchronization is not active
-[10:53:01:367] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:367] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@822198091 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:367] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:368] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 14(Integer)
-[10:53:01:368] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:369] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@60353b]
-[10:53:01:369] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:369] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c213d93] was not registered for synchronization because synchronization is not active
-[10:53:01:369] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:370] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@2104039105 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:370] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:370] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 28(Integer)
-[10:53:01:371] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:371] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c213d93]
-[10:53:01:371] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:372] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7040fe0e] was not registered for synchronization because synchronization is not active
-[10:53:01:372] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:372] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@100173872 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:372] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:372] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 5(Integer)
-[10:53:01:374] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 3
-[10:53:01:374] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7040fe0e]
-[10:53:01:374] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:374] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1234a97] was not registered for synchronization because synchronization is not active
-[10:53:01:374] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:375] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1986290739 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:376] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:376] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 7(Integer)
-[10:53:01:376] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:376] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1234a97]
-[10:53:01:376] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:377] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15665cbd] was not registered for synchronization because synchronization is not active
-[10:53:01:377] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:377] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@243977076 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:377] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:378] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 8(Integer)
-[10:53:01:378] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:378] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15665cbd]
-[10:53:01:379] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:379] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a09d93d] was not registered for synchronization because synchronization is not active
-[10:53:01:379] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:379] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@757989237 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:379] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:379] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 13(Integer)
-[10:53:01:380] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:380] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a09d93d]
-[10:53:01:380] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:380] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d2d6c32] was not registered for synchronization because synchronization is not active
-[10:53:01:381] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:381] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@959021723 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:381] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:381] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 6(Integer)
-[10:53:01:383] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
-[10:53:01:383] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7d2d6c32]
-[10:53:01:383] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:384] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e364ffe] was not registered for synchronization because synchronization is not active
-[10:53:01:384] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:384] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@972988039 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:384] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:384] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 16(Integer)
-[10:53:01:385] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:385] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e364ffe]
-[10:53:01:385] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:385] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d85032] was not registered for synchronization because synchronization is not active
-[10:53:01:385] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:385] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1057858056 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:386] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:386] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 9(Integer)
-[10:53:01:387] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
-[10:53:01:387] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23d85032]
-[10:53:01:387] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:387] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bd4449e] was not registered for synchronization because synchronization is not active
-[10:53:01:388] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:388] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@371552978 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:388] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:389] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 17(Integer)
-[10:53:01:390] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:392] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bd4449e]
-[10:53:01:394] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:394] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66621bee] was not registered for synchronization because synchronization is not active
-[10:53:01:394] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:394] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1832107219 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:395] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:395] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 10(Integer)
-[10:53:01:396] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
-[10:53:01:396] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66621bee]
-[10:53:01:397] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:397] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11d7c917] was not registered for synchronization because synchronization is not active
-[10:53:01:397] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:397] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1729891752 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:398] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:398] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 18(Integer)
-[10:53:01:399] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:399] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11d7c917]
-[10:53:01:399] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:399] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67cd3f8a] was not registered for synchronization because synchronization is not active
-[10:53:01:400] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:400] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@1216204053 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:400] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:400] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 27(Integer)
-[10:53:01:401] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 1
-[10:53:01:401] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67cd3f8a]
-[10:53:01:402] [DEBUG] - org.mybatis.spring.SqlSessionUtils.getSqlSession(SqlSessionUtils.java:97) - Creating a new SqlSession
-[10:53:01:402] [DEBUG] - org.mybatis.spring.SqlSessionUtils.registerSessionHolder(SqlSessionUtils.java:148) - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17ef4da2] was not registered for synchronization because synchronization is not active
-[10:53:01:402] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=1, active=0, idle=1, waiting=0)
-[10:53:01:402] [DEBUG] - org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115) - Fetching JDBC Connection from DataSource
-[10:53:01:402] [DEBUG] - org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:87) - JDBC Connection [HikariProxyConnection@424673722 wrapping com.mysql.cj.jdbc.ConnectionImpl@1a508a90] will not be managed by Spring
-[10:53:01:402] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==>  Preparing: select id, `name`, `type`, parent_id, order_num, create_time, update_time from imooc_mall_category where parent_id = ? 
-[10:53:01:403] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 15(Integer)
-[10:53:01:403] [DEBUG] - org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - <==      Total: 0
-[10:53:01:404] [DEBUG] - org.mybatis.spring.SqlSessionUtils.closeSqlSession(SqlSessionUtils.java:191) - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@17ef4da2]
-[10:53:01:406] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bfca371
-[10:53:01:409] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ac1a94a
-[10:53:01:411] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5be1652e
-[10:53:01:414] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@aee5605
-[10:53:01:417] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@a30d428
-[10:53:01:420] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@ea0a84a
-[10:53:01:422] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5aee0aba
-[10:53:01:426] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@409dfbfe
-[10:53:01:428] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1fd6bde5
-[10:53:01:429] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - After adding stats (total=10, active=0, idle=10, waiting=0)
-[10:53:01:463] [DEBUG] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:273) - Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-[10:53:01:464] [DEBUG] - org.springframework.core.log.LogFormatUtils.traceDebug(LogFormatUtils.java:91) - Writing [ApiRestResponse{status=10000, msg='SUCCESS', data=[com.heiyu.mall.model.vo.CategoryVO@1abfc128, com. (truncated)...]
-[10:53:01:474] [DEBUG] - org.springframework.web.servlet.FrameworkServlet.logResult(FrameworkServlet.java:1131) - Completed 200 OK
-[10:53:31:404] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:54:01:405] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:54:31:408] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:55:01:411] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:55:31:415] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:56:01:418] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:56:31:420] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:57:01:424] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:57:31:426] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:58:01:428] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:58:31:429] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:59:01:432] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[10:59:31:434] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:00:01:436] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:00:31:438] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:01:01:441] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:01:31:445] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:02:01:449] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:02:31:452] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:03:01:453] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:03:31:455] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:04:01:456] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:04:31:457] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:05:01:458] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:05:31:460] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:06:01:462] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:06:31:464] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:07:01:465] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:07:31:469] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:08:01:470] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:08:31:472] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:09:01:476] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:09:31:479] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:10:01:482] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:10:31:483] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:11:01:484] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:11:31:484] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:12:01:486] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:12:31:488] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:13:01:491] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:13:31:492] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:14:01:494] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:14:31:498] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:15:01:500] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:15:31:504] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:16:01:506] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:16:31:507] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:17:01:509] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:17:31:512] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:18:01:513] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:18:31:513] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:19:01:517] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:19:31:520] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:20:01:522] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:20:31:523] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:21:01:526] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:21:31:527] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:22:01:530] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:22:22:887] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1a508a90: (connection has passed maxLifetime)
-[11:22:22:891] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ac5e61c
-[11:22:24:173] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@409dfbfe: (connection has passed maxLifetime)
-[11:22:24:176] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@bf8ec27
-[11:22:25:987] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@a30d428: (connection has passed maxLifetime)
-[11:22:25:989] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a39e03b
-[11:22:28:471] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@aee5605: (connection has passed maxLifetime)
-[11:22:28:473] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bd71368
-[11:22:29:601] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1fd6bde5: (connection has passed maxLifetime)
-[11:22:29:603] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@9e24678
-[11:22:30:513] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5be1652e: (connection has passed maxLifetime)
-[11:22:30:515] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@69ff58a2
-[11:22:31:533] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:22:36:107] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@ea0a84a: (connection has passed maxLifetime)
-[11:22:36:110] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@22988ae3
-[11:22:42:175] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5aee0aba: (connection has passed maxLifetime)
-[11:22:42:178] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@440158ab
-[11:22:50:144] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@2bfca371: (connection has passed maxLifetime)
-[11:22:50:147] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cf2c945
-[11:22:57:985] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6ac1a94a: (connection has passed maxLifetime)
-[11:22:57:991] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b14cafb
-[11:23:01:535] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:23:31:538] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:24:01:541] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:24:31:542] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:25:01:545] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:25:31:547] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:26:01:549] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:26:31:552] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:27:01:556] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:27:31:559] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:28:01:562] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:28:31:562] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:29:01:563] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:29:31:566] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:30:01:569] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:30:31:572] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:31:01:576] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:31:31:576] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:32:01:578] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:32:31:581] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:33:01:584] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:33:31:588] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:34:01:590] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:34:31:590] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:35:01:592] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:35:31:592] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:36:01:594] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:36:31:596] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:37:01:598] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:37:31:601] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:38:01:603] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:38:31:606] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:39:01:609] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:39:31:609] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:40:01:610] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:40:31:612] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:41:01:612] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:41:31:615] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:42:01:617] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:42:31:619] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:43:01:620] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:43:31:621] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:44:01:624] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:44:31:626] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:45:01:628] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:45:31:630] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:46:01:633] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:46:31:633] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:47:01:637] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:47:31:638] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:48:01:639] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:48:31:639] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:49:01:642] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:49:31:644] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:50:01:646] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:50:31:648] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:51:01:652] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:51:31:653] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:51:57:614] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6bd71368: (connection has passed maxLifetime)
-[11:51:57:618] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@81d88a8
-[11:51:59:346] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@440158ab: (connection has passed maxLifetime)
-[11:51:59:350] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@49208293
-[11:52:01:303] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@bf8ec27: (connection has passed maxLifetime)
-[11:52:01:306] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@78238c39
-[11:52:01:657] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:52:06:516] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@7cf2c945: (connection has passed maxLifetime)
-[11:52:06:518] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d3097da
-[11:52:10:837] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@4ac5e61c: (connection has passed maxLifetime)
-[11:52:10:839] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c0d9de1
-[11:52:13:863] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@2b14cafb: (connection has passed maxLifetime)
-[11:52:13:865] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5dab1365
-[11:52:14:116] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@69ff58a2: (connection has passed maxLifetime)
-[11:52:14:118] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@c2262ae
-[11:52:15:932] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@9e24678: (connection has passed maxLifetime)
-[11:52:15:936] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1baad8c2
-[11:52:17:564] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@22988ae3: (connection has passed maxLifetime)
-[11:52:17:566] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@86c1a25
-[11:52:17:993] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3a39e03b: (connection has passed maxLifetime)
-[11:52:17:997] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@25b017d7
-[11:52:31:658] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:53:01:662] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:53:31:663] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:54:01:664] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:54:31:666] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:55:01:669] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:55:31:669] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:56:01:671] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:56:31:673] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:57:01:675] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:57:31:677] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:58:01:681] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:58:31:685] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:59:01:688] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[11:59:31:689] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:00:01:691] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:00:31:692] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:01:01:696] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:01:31:699] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:02:01:703] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:02:31:707] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:03:01:708] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:03:31:710] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:04:01:712] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:04:31:714] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:05:01:716] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:05:31:717] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:06:01:720] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:06:31:723] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:07:01:725] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:07:31:725] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:08:01:728] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:08:31:730] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:09:01:733] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:09:31:733] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:10:01:736] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:10:31:738] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:11:01:742] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:11:31:743] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:12:01:748] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:12:31:750] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:13:01:753] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:13:31:756] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:14:01:758] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:14:31:760] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:15:01:762] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:15:31:765] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:16:01:768] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:16:31:772] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:17:01:773] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:17:31:775] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:18:01:777] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:18:31:780] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:19:01:784] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:19:31:786] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:20:01:789] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:20:31:791] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:21:01:793] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:21:18:357] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@49208293: (connection has passed maxLifetime)
-[12:21:18:360] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@63f45d78
-[12:21:29:756] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6c0d9de1: (connection has passed maxLifetime)
-[12:21:29:759] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2bc313c7
-[12:21:31:794] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:21:38:753] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@81d88a8: (connection has passed maxLifetime)
-[12:21:38:755] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@27725da
-[12:21:53:781] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@78238c39: (connection has passed maxLifetime)
-[12:21:53:785] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f542da8
-[12:21:55:288] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5dab1365: (connection has passed maxLifetime)
-[12:21:55:290] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e692793
-[12:22:00:862] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@2d3097da: (connection has passed maxLifetime)
-[12:22:00:865] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4490e6f8
-[12:22:01:798] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:22:06:074] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@25b017d7: (connection has passed maxLifetime)
-[12:22:06:081] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f94f799
-[12:22:12:898] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@c2262ae: (connection has passed maxLifetime)
-[12:22:12:900] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2521d16f
-[12:22:14:101] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@86c1a25: (connection has passed maxLifetime)
-[12:22:14:107] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@641cdb54
-[12:22:15:535] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1baad8c2: (connection has passed maxLifetime)
-[12:22:15:537] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@55b25c96
-[12:22:31:799] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:23:01:800] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:23:31:802] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
-[12:24:01:803] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:00:07:499] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:00:07:503] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1f0046f4: (connection has passed maxLifetime)
+[00:00:07:504] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5fb44434: (connection has passed maxLifetime)
+[00:00:07:505] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3f9bbb7b: (connection has passed maxLifetime)
+[00:00:07:505] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6e2158ce: (connection has passed maxLifetime)
+[00:00:07:505] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@77e44b0: (connection has passed maxLifetime)
+[00:00:07:505] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1e894e0f: (connection has passed maxLifetime)
+[00:00:07:506] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@23aa2782: (connection has passed maxLifetime)
+[00:00:07:506] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c576240
+[00:00:07:506] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@753be028: (connection has passed maxLifetime)
+[00:00:07:506] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@62c251bf: (connection has passed maxLifetime)
+[00:00:07:506] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@553ed0: (connection has passed maxLifetime)
+[00:00:07:508] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@d6a687b
+[00:00:07:510] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c2d6071
+[00:00:07:512] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d459734
+[00:00:07:514] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@be3e7e8
+[00:00:07:517] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@690b0ed8
+[00:00:07:524] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@70839367
+[00:00:07:529] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f61ab41
+[00:00:07:536] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@8c01d3a
+[00:00:07:539] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c2e811f
+[00:00:39:059] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:01:09:072] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:01:39:078] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:02:09:085] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:02:39:097] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:03:09:110] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:03:39:118] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:04:09:118] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:04:39:134] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:05:09:136] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:05:39:147] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:06:09:149] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:06:39:149] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:07:09:161] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:07:39:172] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:08:09:188] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:08:39:194] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:09:09:195] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:09:39:206] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:10:09:216] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:10:39:226] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:11:09:230] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:11:39:240] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:12:09:253] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:12:39:255] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:13:09:255] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:13:39:260] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:14:09:263] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:14:39:272] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:15:09:286] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:15:39:294] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:16:09:308] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:16:39:309] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:17:09:323] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:17:39:325] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:18:09:341] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:18:39:353] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:19:09:360] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:19:39:374] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:20:09:378] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:20:39:382] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:21:09:385] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:21:39:397] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:22:09:409] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:22:39:410] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:23:09:423] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:23:39:434] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:24:09:443] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:24:39:453] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:25:09:467] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:25:39:477] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:26:09:493] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:26:39:495] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:27:09:499] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:27:39:508] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:28:09:510] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:28:39:525] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:29:09:530] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:29:33:246] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@8c01d3a: (connection has passed maxLifetime)
+[00:29:33:249] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@504f13fe
+[00:29:33:436] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5f61ab41: (connection has passed maxLifetime)
+[00:29:33:439] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@117219c5
+[00:29:34:489] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@d6a687b: (connection has passed maxLifetime)
+[00:29:34:491] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@20a98dad
+[00:29:39:539] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:29:48:210] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@690b0ed8: (connection has passed maxLifetime)
+[00:29:48:215] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b90a70
+[00:29:49:610] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@4c576240: (connection has passed maxLifetime)
+[00:29:49:613] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4084004b
+[00:29:52:279] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@be3e7e8: (connection has passed maxLifetime)
+[00:29:52:282] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@710e23d6
+[00:29:52:910] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@6d459734: (connection has passed maxLifetime)
+[00:29:52:913] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@20abff04
+[00:29:54:027] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3c2d6071: (connection has passed maxLifetime)
+[00:29:54:029] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@726576af
+[00:30:00:154] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@5c2e811f: (connection has passed maxLifetime)
+[00:30:00:158] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f634862
+[00:30:02:604] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@70839367: (connection has passed maxLifetime)
+[00:30:02:606] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@e5e4259
+[00:30:09:541] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:30:39:554] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:31:09:557] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:31:39:566] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:32:09:567] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:32:39:575] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:33:09:587] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:33:39:588] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:34:09:603] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:34:39:617] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:35:09:620] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:35:39:620] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:36:09:633] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:36:39:645] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:37:09:655] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:37:39:658] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:38:09:663] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:38:39:675] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:39:09:688] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:39:39:697] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:40:09:706] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:40:39:716] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:41:09:717] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:41:39:729] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:42:09:729] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:42:39:730] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:43:09:740] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:43:39:753] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:44:09:763] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:44:39:768] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:45:09:778] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:45:39:789] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:46:09:796] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:46:39:799] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:47:09:811] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:47:39:819] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:48:09:829] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:48:39:830] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:49:09:830] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:49:39:839] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:50:09:846] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:50:39:862] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:51:09:868] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:51:39:873] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:52:09:876] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:52:39:880] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:53:09:891] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:53:39:900] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:54:09:915] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:54:39:922] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:55:09:931] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:55:39:944] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:56:09:954] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:56:39:955] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:57:09:967] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:57:39:972] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:58:09:978] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:58:39:987] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:58:53:078] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@117219c5: (connection has passed maxLifetime)
+[00:58:53:082] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d9e1ac4
+[00:59:01:462] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@20a98dad: (connection has passed maxLifetime)
+[00:59:01:465] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@6291646a
+[00:59:09:304] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@20abff04: (connection has passed maxLifetime)
+[00:59:09:307] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@141a58e1
+[00:59:09:996] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:59:10:043] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@726576af: (connection has passed maxLifetime)
+[00:59:10:045] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@552752da
+[00:59:20:658] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@710e23d6: (connection has passed maxLifetime)
+[00:59:20:662] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@764d7d91
+[00:59:21:053] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@504f13fe: (connection has passed maxLifetime)
+[00:59:21:056] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@377077aa
+[00:59:34:110] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@4084004b: (connection has passed maxLifetime)
+[00:59:34:114] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b8fe717
+[00:59:39:047] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@1b90a70: (connection has passed maxLifetime)
+[00:59:39:049] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ab2ed2c
+[00:59:40:007] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[00:59:50:367] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@4f634862: (connection has passed maxLifetime)
+[00:59:50:370] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@209fe219
+[00:59:59:322] [DEBUG] - com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:129) - imooc_mall_datasource - Closing connection com.mysql.cj.jdbc.ConnectionImpl@e5e4259: (connection has passed maxLifetime)
+[00:59:59:324] [DEBUG] - com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:730) - imooc_mall_datasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@dd92ad1
+[01:00:10:014] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:00:40:016] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:01:10:019] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:01:40:025] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:02:10:038] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:02:40:050] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:03:10:051] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:03:40:063] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:04:10:074] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:04:40:077] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:05:10:089] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:05:40:102] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:06:10:114] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:06:40:121] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:07:10:124] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:07:40:136] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:08:10:136] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:08:40:138] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:09:10:145] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:09:40:150] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:10:10:164] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:10:40:170] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:11:10:186] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:11:40:195] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:12:10:199] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:12:40:212] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:13:10:220] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:13:40:221] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:14:10:235] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)
+[01:14:40:242] [DEBUG] - com.zaxxer.hikari.pool.HikariPool.logPoolState(HikariPool.java:417) - imooc_mall_datasource - Pool stats (total=10, active=0, idle=10, waiting=0)

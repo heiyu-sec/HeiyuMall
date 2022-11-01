@@ -1,0 +1,6 @@
+[00:41:12:807] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=3h2m117ms871µs400ns).
+[03:45:12:853] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=3h2m29ms15µs300ns).
+[06:49:12:296] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=3h1m59s445ms863µs900ns).
+[10:16:50:528] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=3h25m44s882ms153µs300ns).
+[10:33:22:085] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=5m1s515ms902µs500ns).
+[13:39:34:555] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=3h6m16s754ms515µs500ns).
