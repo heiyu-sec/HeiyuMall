@@ -51,7 +51,7 @@ public class PorductServiceImpl implements ProductService {
     public void delete(Integer id){
         Product productOld = productMapper.selectByPrimaryKey(id);
         //查不到该记录，无法删除
-        if(productOld!=null ){
+        if(productOld ==null ){
             throw new ImoocMallException(ImoocMallExceptionEnum.DELETE_FAILED);
         }
         int count = productMapper.deleteByPrimaryKey(id);
