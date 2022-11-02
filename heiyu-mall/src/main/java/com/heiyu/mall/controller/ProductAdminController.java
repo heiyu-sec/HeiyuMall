@@ -8,6 +8,7 @@ import com.heiyu.mall.model.pojo.Product;
 import com.heiyu.mall.model.request.AddProductReq;
 import com.heiyu.mall.model.request.UpdateProductReq;
 import com.heiyu.mall.service.ProductService;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,11 +76,19 @@ public class ProductAdminController {
         return effectiveURI;
     }
 
+    @ApiOperation("后台更新商品")
     @PostMapping("admin/product/update")
     public ApiRestResponse updateProduct(@Valid@RequestBody UpdateProductReq updateProductReq){
         Product product = new Product();
         BeanUtils.copyProperties(updateProductReq,product);
         productService.update(product);
+        return ApiRestResponse.success();
+    }
+
+    @ApiOperation("后台删除商品")
+    @PostMapping("admin/product/delete")
+    public ApiRestResponse deleteProduct(@RequestParam Integer id){
+        productService.delete(id);
         return ApiRestResponse.success();
     }
 }
