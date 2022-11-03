@@ -155,5 +155,14 @@
     where name = #{name,jdbcType=VARCHAR}
   </select>
 
+  <update id="batchUpdateSellStatus">
+    update imooc_mall_product
+    set status = #{sellStatus}
+    where id in
+    <foreach collection="ids" close=")" item="id" open="(" separator=",">
+      #{id}
+    </foreach>
+
+  </update>
 
 </mapper>
