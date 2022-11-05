@@ -162,7 +162,11 @@
     <foreach collection="ids" close=")" item="id" open="(" separator=",">
       #{id}
     </foreach>
-
   </update>
 
+  <select id="selectListForAdmin" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"></include>
+    from imooc_mall_product
+    order by update_time desc
+  </select>
 </mapper>

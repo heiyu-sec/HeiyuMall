@@ -4,6 +4,8 @@ import com.heiyu.mall.model.pojo.Product;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface ProductMapper {
     int deleteByPrimaryKey(Integer id);
@@ -21,4 +23,6 @@ public interface ProductMapper {
     Product selectByName(String name);
 
     int batchUpdateSellStatus(@Param("ids") Integer[] ids, @Param("sellStatus")Integer sellStatus);
+
+    List<Product> selectListForAdmin();
 }
