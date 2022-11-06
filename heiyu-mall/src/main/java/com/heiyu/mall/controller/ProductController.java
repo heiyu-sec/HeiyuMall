@@ -2,6 +2,7 @@ package com.heiyu.mall.controller;
 
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.model.pojo.Product;
+import com.heiyu.mall.model.request.ProductListReq;
 import com.heiyu.mall.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -22,10 +23,16 @@ public class ProductController {
     ProductService productService;
 
     @ApiOperation("商品详情")
-    @GetMapping
+    @GetMapping("product/detail")
     public ApiRestResponse detail(@RequestParam Integer id){
         Product product = productService.detail(id);
         return ApiRestResponse.success(product);
+    }
 
+    @ApiOperation("商品详情")
+    @GetMapping("product/list")
+    public ApiRestResponse list(ProductListReq productListReq){
+        Product product = productService.detail(id);
+        return ApiRestResponse.success(product);
     }
 }

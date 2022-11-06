@@ -7,6 +7,7 @@ import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.model.dao.ProductMapper;
 import com.heiyu.mall.model.pojo.Product;
 import com.heiyu.mall.model.request.AddProductReq;
+import com.heiyu.mall.model.request.ProductListReq;
 import com.heiyu.mall.service.ProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +83,10 @@ public class PorductServiceImpl implements ProductService {
     public Product detail(Integer id){
         Product product = productMapper.selectByPrimaryKey(id);
         return product;
+
+    }
+
+    public PageInfo list(ProductListReq productListReq){
 
     }
 }
