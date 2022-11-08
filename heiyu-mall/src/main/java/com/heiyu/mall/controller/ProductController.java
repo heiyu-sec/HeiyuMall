@@ -1,5 +1,6 @@
 package com.heiyu.mall.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.model.pojo.Product;
 import com.heiyu.mall.model.request.ProductListReq;
@@ -32,7 +33,7 @@ public class ProductController {
     @ApiOperation("商品详情")
     @GetMapping("product/list")
     public ApiRestResponse list(ProductListReq productListReq){
-        Product product = productService.detail(id);
-        return ApiRestResponse.success(product);
+        PageInfo list = productService.list(productListReq);
+        return ApiRestResponse.success(list);
     }
 }

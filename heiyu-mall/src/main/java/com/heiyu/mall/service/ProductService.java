@@ -5,6 +5,7 @@ import com.heiyu.mall.model.pojo.Category;
 import com.heiyu.mall.model.pojo.Product;
 import com.heiyu.mall.model.request.AddCategoryReq;
 import com.heiyu.mall.model.request.AddProductReq;
+import com.heiyu.mall.model.request.ProductListReq;
 import com.heiyu.mall.model.vo.CategoryVO;
 
 import java.util.List;
@@ -26,4 +27,6 @@ public interface ProductService {
     PageInfo listForAdmin(Integer pageNum, Integer pageSize);
 
     Product detail(Integer id);
+
+    PageInfo list(ProductListReq productListReq);
 }

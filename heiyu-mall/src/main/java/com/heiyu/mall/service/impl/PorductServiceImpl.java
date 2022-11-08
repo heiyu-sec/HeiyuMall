@@ -2,6 +2,7 @@ package com.heiyu.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.model.dao.ProductMapper;
@@ -93,7 +94,7 @@ public class PorductServiceImpl implements ProductService {
         return product;
 
     }
-
+    @Override
     public PageInfo list(ProductListReq productListReq){
         //构建query对象
         ProductListQuery productListQuery = new ProductListQuery();
@@ -111,6 +112,18 @@ public class PorductServiceImpl implements ProductService {
             getCategoryIds(categoryVOSList,categoryIds);
             productListQuery.setCategoryIds(categoryIds);
         }
+
+        //排序处理
+        String orderBy = productListReq.getOrderBy();
+        if(Constant.ProductListOrderBy.FRICE_ASC_DESC.contains(orderBy)){
+            PageHelper.startPage(productListReq.getPageNum(),productListReq.getPageSize(),orderBy);
+        }else {
+            PageHelper.startPage(productListReq.getPageNum(),productListReq.getPageSize());
+        }
+
+        List<Product> productList = productMapper.selectList(productListQuery);
+        PageInfo pageInfo = new PageInfo(productList);
+        return pageInfo;
     }
 
     private void getCategoryIds(List<CategoryVO> categoryVOSList,ArrayList<Integer> categoryIds){
