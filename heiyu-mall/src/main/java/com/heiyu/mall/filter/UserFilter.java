@@ -27,10 +27,7 @@ public class UserFilter implements Filter {
 
     }
 
-    @Override
-    public void destroy() {
 
-    }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -46,6 +43,11 @@ public class UserFilter implements Filter {
 
         }
         filterChain.doFilter(servletRequest,servletResponse);
+    }
+
+    @Override
+    public void destroy() {
+
     }
 
     }

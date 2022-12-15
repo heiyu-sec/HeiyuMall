@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * 描述： user过滤器
+ * 描述： user过滤器的配置
  */
 
 @Configuration
@@ -21,7 +21,6 @@ public class UserFilterConfig {
         filterFilterRegistrationBean.setFilter(userFilter());
         filterFilterRegistrationBean.addUrlPatterns("/cart/*");
         filterFilterRegistrationBean.addUrlPatterns("/order/*");
-
         filterFilterRegistrationBean.setName("userFilterConfig");
         return filterFilterRegistrationBean;
     }
