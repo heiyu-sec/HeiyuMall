@@ -28,11 +28,6 @@ public class AdminFilter implements Filter {
     }
 
     @Override
-    public void destroy() {
-
-    }
-
-    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpSession session = request.getSession();
@@ -52,12 +47,15 @@ public class AdminFilter implements Filter {
             filterChain.doFilter(servletRequest,servletResponse);
         } else {
             PrintWriter out = new HttpServletResponseWrapper((HttpServletResponse) servletResponse).getWriter();
-            out.write("{\"status\" : 10007, \"msg\" : \"NEED_LOGIN\", \"data\" : null}");
+            out.write("{\"status\" : 10009, \"msg\" : \"NEED_ADMIN\", \"data\" : null}");
             out.flush();
             out.close();
-            return;
         }
     }
 
+    @Override
+    public void destroy() {
+
     }
+}
 
