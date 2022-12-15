@@ -10,23 +10,25 @@ import javax.servlet.Filter;
 import javax.servlet.FilterRegistration;
 
 /**
- * 描述： admin过滤器
+ * 描述：     Admin过滤器的配置
  */
-
 @Configuration
 public class AdminFilterConfig {
+
     @Bean
-    public AdminFilter adminFilter(){
+    public AdminFilter adminFilter() {
         return new AdminFilter();
     }
+
     @Bean(name = "adminFilterConf")
-    public FilterRegistrationBean adminFilterConfig(){
-        FilterRegistrationBean filterFilterRegistrationBean = new FilterRegistrationBean<>();
-        filterFilterRegistrationBean.setFilter(adminFilter());
-        filterFilterRegistrationBean.addUrlPatterns("/admin/category/*");
-        filterFilterRegistrationBean.addUrlPatterns("/admin/product/*");
-        filterFilterRegistrationBean.addUrlPatterns("/admin/order/*");
-        filterFilterRegistrationBean.setName("adminFilterConfig");
-        return filterFilterRegistrationBean;
+    public FilterRegistrationBean adminFilterConfig() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        filterRegistrationBean.setFilter(adminFilter());
+        filterRegistrationBean.addUrlPatterns("/admin/category/*");
+        filterRegistrationBean.addUrlPatterns("/admin/product/*");
+        filterRegistrationBean.addUrlPatterns("/admin/order/*");
+        filterRegistrationBean.setName("adminFilterConf");
+        return filterRegistrationBean;
     }
 }
+

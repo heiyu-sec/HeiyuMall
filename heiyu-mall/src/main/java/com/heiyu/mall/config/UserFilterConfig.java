@@ -1,6 +1,7 @@
 package com.heiyu.mall.config;
 
 import com.heiyu.mall.filter.AdminFilter;
+import com.heiyu.mall.filter.UserFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,17 +12,19 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class UserFilterConfig {
+
     @Bean
-    public AdminFilter userFilter(){
-        return new AdminFilter();
+    public UserFilter userFilter() {
+        return new UserFilter();
     }
+
     @Bean(name = "userFilterConf")
-    public FilterRegistrationBean adminFilterConfig(){
-        FilterRegistrationBean filterFilterRegistrationBean = new FilterRegistrationBean<>();
-        filterFilterRegistrationBean.setFilter(userFilter());
-        filterFilterRegistrationBean.addUrlPatterns("/cart/*");
-        filterFilterRegistrationBean.addUrlPatterns("/order/*");
-        filterFilterRegistrationBean.setName("userFilterConfig");
-        return filterFilterRegistrationBean;
+    public FilterRegistrationBean adminFilterConfig() {
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        filterRegistrationBean.setFilter(userFilter());
+        filterRegistrationBean.addUrlPatterns("/cart/*");
+        filterRegistrationBean.addUrlPatterns("/order/*");
+        filterRegistrationBean.setName("userFilterConf");
+        return filterRegistrationBean;
     }
 }

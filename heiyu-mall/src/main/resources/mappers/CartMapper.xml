@@ -117,9 +117,9 @@
 
   <select id="selectCartByUserIdAndProductId" resultMap="BaseResultMap" parameterType="map">
     select
-    <include refid="Base_Column_List"></include>
+    <include refid="Base_Column_List"/>
     from imooc_mall_cart
-    where user_id= #{userId}
-    and productId = #{productId}
+    where user_id = #{userId}
+    and product_id = #{productId}
   </select>
 </mapper>
