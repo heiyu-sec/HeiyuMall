@@ -61,7 +61,7 @@ public class CartController {
 
     @PostMapping("/selectAll")
     @ApiOperation("全不/选中购物车的某商品")
-    public ApiRestResponse selectAll(@RequestParam Integer productId,@RequestParam Integer selected){
+    public ApiRestResponse selectAll(@RequestParam Integer selected){
         //不能传入user ID，cartID，否则可以删除别人的购物车
         List<CartVO> cartVOList = cartService.selectAllOrNot(UserFilter.currentUser.getId(), selected);
         return ApiRestResponse.success(cartVOList);
