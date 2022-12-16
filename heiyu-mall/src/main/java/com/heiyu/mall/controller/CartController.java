@@ -29,11 +29,19 @@ public class CartController {
         return ApiRestResponse.success(cartList);
     }
 
-
     @PostMapping("/add")
     @ApiOperation("添加商品到购物车")
     public ApiRestResponse add(@RequestParam Integer productId, @RequestParam Integer count){
         List<CartVO> cartVOList = cartService.add(UserFilter.currentUser.getId(), productId, count);
         return ApiRestResponse.success(cartVOList);
     }
+
+    @PostMapping("/update")
+    @ApiOperation("更新购物车")
+    public ApiRestResponse update(@RequestParam Integer productId, @RequestParam Integer count){
+        List<CartVO> cartVOList = cartService.update(UserFilter.currentUser.getId(), productId, count);
+        return ApiRestResponse.success(cartVOList);
+    }
+
+    
 }

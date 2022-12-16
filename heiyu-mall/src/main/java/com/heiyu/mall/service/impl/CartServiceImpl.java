@@ -62,6 +62,7 @@ public class CartServiceImpl implements CartService {
         return this.list(userId);
     }
 
+
     private void validProduct(Integer productId, Integer count) {
         Product product = productMapper.selectByPrimaryKey(productId);
         //判断商品是否存在，商品是否上架
@@ -74,5 +75,25 @@ public class CartServiceImpl implements CartService {
 
         }
 
+    }
+    @Override
+    public List<CartVO> update(Integer userId, Integer productId, Integer count){
+        validProduct(productId,count);
+
+        Cart cart = cartMapper.selectCartByUserIdAndProductId(userId, productId);
+        if(cart ==null){
+            //这个商品之前不在购物车里，无法更新
+            throw new ImoocMallException(ImoocMallExceptionEnum.UPDATE_FAILED);
+        }else {
+            //这个商品已经再购物车中，更新数量
+            Cart cartNew= new Cart();
+            cartNew.setQuantity(count);
+            cartNew.setId(cart.getId());
+            cartNew.setProductId(cart.getProductId());
+            cartNew.setUserId(cart.getUserId());
+            cart.setSelected(Constant.Cart.CHECKED);
+            cartMapper.updateByPrimaryKeySelective(cartNew);
+        }
+        return this.list(userId);
     }
 }
