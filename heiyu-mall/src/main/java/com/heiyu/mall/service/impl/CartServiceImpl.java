@@ -56,7 +56,7 @@ public class CartServiceImpl implements CartService {
             cartNew.setId(cart.getId());
             cartNew.setProductId(cart.getProductId());
             cartNew.setUserId(cart.getUserId());
-            cart.setSelected(Constant.Cart.CHECKED);
+            cartNew.setSelected(Constant.Cart.CHECKED);
             cartMapper.updateByPrimaryKeySelective(cartNew);
         }
         return this.list(userId);
@@ -91,7 +91,7 @@ public class CartServiceImpl implements CartService {
             cartNew.setId(cart.getId());
             cartNew.setProductId(cart.getProductId());
             cartNew.setUserId(cart.getUserId());
-            cart.setSelected(Constant.Cart.CHECKED);
+            cartNew.setSelected(Constant.Cart.CHECKED);
             cartMapper.updateByPrimaryKeySelective(cartNew);
         }
         return this.list(userId);

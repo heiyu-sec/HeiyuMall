@@ -242,3 +242,49 @@
 [16:05:22:547] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
 [16:05:22:547] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [23, 1]
 [16:05:22:573] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":[{"id":3,"productId":22,"userId":14,"quantity":2,"selected":0,"price":699,"totalPrice":1398,"productName":"即食海参大连野生辽刺参 新鲜速食 特级生鲜海产 60~80G","productImage":"http://111.231.103.117:8081/images/haishen.jpg"},{"id":4,"productId":23,"userId":14,"quantity":1,"selected":1,"price":12,"totalPrice":12,"productName":"澳大利亚直采鲜橙 精品澳橙12粒 单果130-180g","productImage":"http://111.231.103.117:8081/images/chengzi.jpg"}]}
+[16:08:11:332] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) - Starting MallApplication on whoamiiii with PID 44548 (D:\codefactory\HeiyuMall\heiyu-mall\target\classes started by sectrend1 in D:\codefactory\HeiyuMall)
+[16:08:11:334] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:651) - No active profile set, falling back to default profiles: default
+[16:08:11:801] [INFO] - org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:246) - Multiple Spring Data modules found, entering strict repository configuration mode!
+[16:08:11:803] [INFO] - org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+[16:08:11:817] [INFO] - org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:184) - Finished Spring Data repository scanning in 5ms. Found 0 repository interfaces.
+[16:08:11:967] [INFO] - org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[16:08:12:217] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:92) - Tomcat initialized with port(s): 8083 (http)
+[16:08:12:222] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-8083"]
+[16:08:12:222] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[16:08:12:223] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.27]
+[16:08:12:269] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+[16:08:12:269] [INFO] - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 887 ms
+[16:08:12:857] [INFO] - springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69) - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[16:08:12:952] [INFO] - org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+[16:08:13:261] [INFO] - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) - Context refreshed
+[16:08:13:283] [INFO] - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) - Found 1 custom documentation plugin(s)
+[16:08:13:314] [INFO] - springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) - Scanning for api listing references
+[16:08:13:502] [INFO] - springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40) - Generating unique operation named: listUsingGET_1
+[16:08:13:563] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-8083"]
+[16:08:13:577] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:204) - Tomcat started on port(s): 8083 (http) with context path ''
+[16:08:13:578] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) - Started MallApplication in 2.42 seconds (JVM running for 4.365)
+[16:08:17:634] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[16:08:17:635] [INFO] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+[16:08:17:639] [INFO] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547) - Completed initialization in 4 ms
+[16:08:17:659] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/login
+[16:08:17:659] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[16:08:17:659] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [mumuputong, 12345678, org.apache.catalina.session.StandardSessionFacade@3c4f0b73]
+[16:08:17:680] [INFO] - com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:110) - imooc_mall_datasource - Starting...
+[16:08:17:747] [INFO] - com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:123) - imooc_mall_datasource - Start completed.
+[16:08:17:793] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":{"id":14,"username":"mumuputong","password":null,"personalizedSignature":"","role":1,"createTime":1671096533000,"updateTime":1671096533000}}
+[16:08:21:503] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/cart/delete
+[16:08:21:503] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[16:08:21:503] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [22]
+[16:08:21:528] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":[{"id":4,"productId":23,"userId":14,"quantity":1,"selected":1,"price":12,"totalPrice":12,"productName":"澳大利亚直采鲜橙 精品澳橙12粒 单果130-180g","productImage":"http://111.231.103.117:8081/images/chengzi.jpg"}]}
+[16:08:24:748] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/cart/add
+[16:08:24:749] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[16:08:24:749] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [23, 1]
+[16:08:24:776] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":[{"id":4,"productId":23,"userId":14,"quantity":2,"selected":1,"price":12,"totalPrice":24,"productName":"澳大利亚直采鲜橙 精品澳橙12粒 单果130-180g","productImage":"http://111.231.103.117:8081/images/chengzi.jpg"}]}
+[16:08:30:009] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/cart/add
+[16:08:30:010] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[16:08:30:010] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [22, 1]
+[16:08:30:030] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":[{"id":4,"productId":23,"userId":14,"quantity":2,"selected":1,"price":12,"totalPrice":24,"productName":"澳大利亚直采鲜橙 精品澳橙12粒 单果130-180g","productImage":"http://111.231.103.117:8081/images/chengzi.jpg"},{"id":5,"productId":22,"userId":14,"quantity":1,"selected":1,"price":699,"totalPrice":699,"productName":"即食海参大连野生辽刺参 新鲜速食 特级生鲜海产 60~80G","productImage":"http://111.231.103.117:8081/images/haishen.jpg"}]}
+[16:08:34:008] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/cart/selectAll
+[16:08:34:008] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[16:08:34:008] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [0]
+[16:08:34:019] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":[{"id":4,"productId":23,"userId":14,"quantity":2,"selected":0,"price":12,"totalPrice":24,"productName":"澳大利亚直采鲜橙 精品澳橙12粒 单果130-180g","productImage":"http://111.231.103.117:8081/images/chengzi.jpg"},{"id":5,"productId":22,"userId":14,"quantity":1,"selected":0,"price":699,"totalPrice":699,"productName":"即食海参大连野生辽刺参 新鲜速食 特级生鲜海产 60~80G","productImage":"http://111.231.103.117:8081/images/haishen.jpg"}]}
