@@ -50,4 +50,20 @@ public class CartController {
         List<CartVO> cartVOList = cartService.delete(UserFilter.currentUser.getId(), productId);
         return ApiRestResponse.success(cartVOList);
     }
+
+    @PostMapping("/select")
+    @ApiOperation("不/选中购物车的某商品")
+    public ApiRestResponse select(@RequestParam Integer productId,@RequestParam Integer selected){
+        //不能传入user ID，cartID，否则可以删除别人的购物车
+        List<CartVO> cartVOList = cartService.selectOrNot(UserFilter.currentUser.getId(), productId,selected);
+        return ApiRestResponse.success(cartVOList);
+    }
+
+    @PostMapping("/selectAll")
+    @ApiOperation("全不/选中购物车的某商品")
+    public ApiRestResponse selectAll(@RequestParam Integer productId,@RequestParam Integer selected){
+        //不能传入user ID，cartID，否则可以删除别人的购物车
+        List<CartVO> cartVOList = cartService.selectAllOrNot(UserFilter.currentUser.getId(), selected);
+        return ApiRestResponse.success(cartVOList);
+    }
 }
