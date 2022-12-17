@@ -5,6 +5,8 @@ import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.filter.UserFilter;
 import com.heiyu.mall.model.dao.CartMapper;
+import com.heiyu.mall.model.dao.OrderItemMapper;
+import com.heiyu.mall.model.dao.OrderMapper;
 import com.heiyu.mall.model.dao.ProductMapper;
 import com.heiyu.mall.model.pojo.Order;
 import com.heiyu.mall.model.pojo.OrderItem;
@@ -38,6 +40,13 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     CartMapper cartMapper;
 
+    @Autowired
+    OrderMapper orderMapper;
+
+    @Autowired
+    OrderItemMapper orderItemMapper;
+
+    @Override
     public String create(CreateOrderReq createOrderReq){
         //拿到用户ID
         Integer userId = UserFilter.currentUser.getId();
@@ -79,9 +88,39 @@ public class OrderServiceImpl implements OrderService {
         //生成订单号，有独立的规则
         String orderNo = OrderCodeFactory.getOrderCode(Long.valueOf(userId));
         order.setOrderNo(orderNo);
+        order.setUserId(userId);
+        order.setTotalPrice(totalPrice(orderItemsList));
+        order.setReceiverName(createOrderReq.getReceiverName());
+        order.setReceiverMobile(createOrderReq.getReceiverMobile());
+        order.setReceiverAddress(createOrderReq.getReceiverAddress());
+        order.setOrderStatus(Constant.OrderStatusEnum.NOT_PAID.getCode());
+        order.setPostage(0);
+        order.setPaymentType(1);
+        //插入到order表
+        orderMapper.insertSelective(order);
+
+
         //循环保存每个商品的order_item表
+        for (int i = 0; i < orderItemsList.size(); i++) {
+            OrderItem orderItem = orderItemsList.get(i);
+            orderItem.setOrderNo(order.getOrderNo());
+            orderItemMapper.insertSelective(orderItem);
+
+        }
 
         //把结果返回
+
+        return orderNo;
+    }
+
+    private Integer totalPrice(List<OrderItem> orderItemsList) {
+        Integer totalPrice =0;
+        for (int i = 0; i < orderItemsList.size(); i++) {
+            OrderItem orderItem =  orderItemsList.get(i);
+            totalPrice+= orderItem.getTotalPrice();
+
+        }
+        return totalPrice;
     }
 
     private void cleanCart(List<CartVO> cartVOList) {
@@ -104,7 +143,7 @@ public class OrderServiceImpl implements OrderService {
             orderItem.setUnitPrice(cartVO.getPrice());
             orderItem.setQuantity(cartVO.getQuantity());
             orderItem.setTotalPrice(cartVO.getTotalPrice());
-            orderItemList.add(orderItem)
+            orderItemList.add(orderItem);
 
         }
         return orderItemList;
