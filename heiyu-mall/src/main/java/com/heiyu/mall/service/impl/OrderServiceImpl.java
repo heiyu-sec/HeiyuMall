@@ -18,6 +18,7 @@ import com.heiyu.mall.service.OrderService;
 import com.heiyu.mall.util.OrderCodeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -46,6 +47,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderItemMapper orderItemMapper;
 
+    //数据库事务
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public String create(CreateOrderReq createOrderReq){
         //拿到用户ID
