@@ -28,6 +28,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -224,6 +225,27 @@ public class OrderServiceImpl implements OrderService {
             orderVOList.add(orderVO);
         }
         return orderVOList;
+    }
+    @Override
+    public void cancel(String orderNo){
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        //查不到订单，报错
+        if(order==null){
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        //验证用户身份
+        //订单存在，需要判断所属
+        Integer userId = UserFilter.currentUser.getId();
+        if(!order.getUserId().equals(userId)){
+            throw new ImoocMallException(ImoocMallExceptionEnum.NOT_YOUR_ORDER);
+        }
+        if(order.getOrderStatus().equals(Constant.OrderStatusEnum.NOT_PAID.getCode())){
+            order.setOrderStatus(Constant.OrderStatusEnum.CANCELED.getCode());
+            order.setEndTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        }else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+        }
     }
 
 }
