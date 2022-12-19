@@ -1,5 +1,6 @@
 package com.heiyu.mall.service;
 
+import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.model.request.CreateOrderReq;
 import com.heiyu.mall.model.vo.CartVO;
 import com.heiyu.mall.model.vo.OrderVO;
@@ -12,4 +13,6 @@ public interface OrderService {
     String create(CreateOrderReq createOrderReq);
 
     OrderVO detail(String orderNo);
+
+    PageInfo listForCustomer(Integer pageNum, Integer pageSize);
 }

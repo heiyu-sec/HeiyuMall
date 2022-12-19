@@ -1,5 +1,6 @@
 package com.heiyu.mall.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.model.request.CreateOrderReq;
 import com.heiyu.mall.model.vo.OrderVO;
@@ -29,5 +30,12 @@ public class OrderController {
     public ApiRestResponse detail(@RequestParam String orderNo){
         OrderVO orderVO = orderService.detail(orderNo);
         return ApiRestResponse.success(orderVO);
+    }
+
+    @GetMapping("order/list")
+    @ApiOperation("前台订单列表")
+    public ApiRestResponse list(@RequestParam Integer pageNum,@RequestParam Integer pageSize){
+        PageInfo pageInfo = orderService.listForCustomer(pageNum, pageSize);
+        return ApiRestResponse.success(pageInfo);
     }
 }
