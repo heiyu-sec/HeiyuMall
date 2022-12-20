@@ -2,6 +2,7 @@ package com.heiyu.mall.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.google.zxing.WriterException;
 import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
@@ -20,13 +21,20 @@ import com.heiyu.mall.model.vo.OrderVO;
 import com.heiyu.mall.service.CartService;
 import com.heiyu.mall.service.OrderService;
 import com.heiyu.mall.util.OrderCodeFactory;
+import com.heiyu.mall.util.QRCodeGenerator;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -53,6 +61,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     OrderItemMapper orderItemMapper;
+
+    @Value("${file.upload.ip}")
+    String ip;
 
     //数据库事务
     @Transactional(rollbackFor = Exception.class)
@@ -248,4 +259,20 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
+    @Override
+    public String qrcode(String orderNo){
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+        String address = ip+":"+request.getLocalPort();
+        String payUrl = "http://"+address+"/pay?orderNo="+orderNo;
+        try {
+            QRCodeGenerator.generateQRCodeImage(payUrl,350,350,Constant.FILE_UPLOAD_DIR+orderNo+".png");
+        } catch (WriterException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String pngAddress = "http://"+address+"/images/"+orderNo+".png";
+        return pngAddress;
+    }
 }
