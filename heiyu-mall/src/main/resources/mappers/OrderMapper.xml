@@ -225,4 +225,12 @@
     where user_id = #{userId}
     order by create_time desc
   </select>
+
+
+  <select id="selectAllForAdmin" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List"></include>
+    from imooc_mall_order
+    order by create_time desc
+  </select>
 </mapper>
