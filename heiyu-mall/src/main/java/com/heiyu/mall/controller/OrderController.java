@@ -58,8 +58,8 @@ public class OrderController {
     }
 
 
-    @PostMapping("order/pay")
-    @ApiOperation("生成支付接口")
+    @GetMapping("pay")
+    @ApiOperation("支付接口")
     public ApiRestResponse pay(@RequestParam String orderNo){
         orderService.pay(orderNo);
         return ApiRestResponse.success();
