@@ -20,6 +20,7 @@ import com.heiyu.mall.model.vo.OrderItemVO;
 import com.heiyu.mall.model.vo.OrderVO;
 import com.heiyu.mall.service.CartService;
 import com.heiyu.mall.service.OrderService;
+import com.heiyu.mall.service.UserService;
 import com.heiyu.mall.util.OrderCodeFactory;
 import com.heiyu.mall.util.QRCodeGenerator;
 import org.springframework.beans.BeanUtils;
@@ -64,6 +65,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Value("${file.upload.ip}")
     String ip;
+
+    @Autowired
+    UserService userService;
 
     //数据库事务
     @Transactional(rollbackFor = Exception.class)
@@ -301,5 +305,46 @@ public class OrderServiceImpl implements OrderService {
         PageInfo pageInfo = new PageInfo<>(orderList);
         pageInfo.setList(orderList);
         return pageInfo;
+    }
+
+    //发货
+    @Override
+    public void deliver(String orderNo){
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        //查不到订单，报错
+        if(order==null){
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        if(order.getOrderStatus()== Constant.OrderStatusEnum.DELIVERED.getCode()){
+            order.setDeliveryTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        }else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+
+        }
+    }
+
+    //发货
+    @Override
+    public void finish(String orderNo){
+        Order order = orderMapper.selectByOrderNo(orderNo);
+        //查不到订单，报错
+        if(order==null){
+            throw new ImoocMallException(ImoocMallExceptionEnum.NO_ORDER);
+        }
+        //如果是普通用户，就要校验订单的所属
+        if (!userService.checkAdminRole(UserFilter.currentUser)&& !order.getUserId().equals(UserFilter.currentUser.getId())) {
+            throw new ImoocMallException(ImoocMallExceptionEnum.NOT_YOUR_ORDER);
+        }
+
+        //发货后可以完结订单
+
+        if(order.getOrderStatus()== Constant.OrderStatusEnum.FINISHED.getCode()){
+            order.setEndTime(new Date());
+            orderMapper.updateByPrimaryKeySelective(order);
+        }else {
+            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+
+        }
     }
 }
