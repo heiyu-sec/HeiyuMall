@@ -8,6 +8,7 @@ import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.service.UserService;
 
 
+import com.heiyu.mall.util.EmailUtil;
 import org.springframework.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -126,6 +127,24 @@ public class UserController {
         } else {
             return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_ADMIN);
         }
+    }
+
+    /**
+     * 发送邮件
+     */
+    @PostMapping("/user/sendEmail")
+    @ResponseBody
+    public ApiRestResponse sendEmail(@RequestParam("emailAddress") String emailAddress)
+            throws ImoocMallException {
+
+        //检查邮件地址是否有效，检查是否已注册
+        boolean validEmailAddress = EmailUtil.isValidEmailAddress(emailAddress);
+        if (validEmailAddress){
+
+        }else {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.WRONG_EMAIL);
+        }
+        return null;
     }
 
 }

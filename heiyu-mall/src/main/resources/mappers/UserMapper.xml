@@ -126,4 +126,18 @@
       email_address = #{emailAddress,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from imooc_mall_user
+    where username=#{userName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectLogin" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from imooc_mall_user
+    where username = #{userName,jdbcType=VARCHAR}
+    and password = #{password}
+  </select>
 </mapper>
