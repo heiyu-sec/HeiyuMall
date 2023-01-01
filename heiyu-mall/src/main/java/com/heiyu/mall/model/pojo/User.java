@@ -17,6 +17,8 @@ public class User {
 
     private Date updateTime;
 
+    private String emailAddress;
+
     public Integer getId() {
         return id;
     }
@@ -71,5 +73,13 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress == null ? null : emailAddress.trim();
     }
 }
