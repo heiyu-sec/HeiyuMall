@@ -16,6 +16,8 @@ import java.util.Set;
 public class Constant {
     public static final String SALT="34dsdfDDD,0sss8";
     public static final String IMOOC_MALL_USER = "imooc_mall_user";
+    public static final String EMAIL_FROM="594549621@qq.com";
+    public static final String EMAIL_SUBJECT="你的验证码";
 
     public static String FILE_UPLOAD_DIR;
 

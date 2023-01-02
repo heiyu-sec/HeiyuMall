@@ -140,4 +140,12 @@
     where username = #{userName,jdbcType=VARCHAR}
     and password = #{password}
   </select>
+  <select id="selectOneByEmailAddress" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from imooc_mall_user
+    where email_address = #{email_address,jdbcType=VARCHAR}
+    limit 1
+  </select>
+
 </mapper>

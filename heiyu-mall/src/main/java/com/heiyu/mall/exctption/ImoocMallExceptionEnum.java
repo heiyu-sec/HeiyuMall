@@ -27,7 +27,7 @@ public enum ImoocMallExceptionEnum {
     NOT_YOUR_ORDER(10021, "订单不属于你"),
     WRONG_ORDER_STATUS(10022, "订单状态不符"),
     WRONG_EMAIL(10023, "非法的邮件地址"),
-
+    EMAIL_ALREADY_BEEN_REGISTERED(10024, "email已经被注册"),
     SYSTEM_ERROR(20000, "系统异常，请从控制台或日志中查看具体错误信息");
     /**
      * 异常码
