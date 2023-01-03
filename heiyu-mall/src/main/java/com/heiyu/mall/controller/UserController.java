@@ -150,6 +150,8 @@ public class UserController {
             if (!emailPassed){
                 return ApiRestResponse.error(ImoocMallExceptionEnum.EMAIL_ALREADY_BEEN_REGISTERED);
             } else {
+                String verificationCode = EmailUtil.genVerificationCode();
+
                 emailService.sendSimpleMessage(emailAddress,Constant.EMAIL_SUBJECT,"欢迎注册，您的验证码是");
                 return ApiRestResponse.success();
             }

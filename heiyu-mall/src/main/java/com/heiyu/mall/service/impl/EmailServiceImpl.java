@@ -25,4 +25,8 @@ public class EmailServiceImpl implements EmailService {
         simpleMailMessage.setText(text);
         mailSender.send(simpleMailMessage);
     }
+
+    public Boolean saveEmailToRedis(String emailAddress,String verificationCode ){
+        Redisson.create();
+    }
 }
