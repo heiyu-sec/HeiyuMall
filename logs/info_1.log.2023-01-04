@@ -1,0 +1,5 @@
+[09:43:56:917] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=12h20m54s577ms259µs900ns).
+[09:55:13:112] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[09:55:13:113] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[09:55:13:113] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[09:55:13:215] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
