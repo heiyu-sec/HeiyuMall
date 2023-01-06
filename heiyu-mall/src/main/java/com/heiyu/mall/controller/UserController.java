@@ -53,7 +53,7 @@ public class UserController {
     @PostMapping("/register")
     @ResponseBody
     public ApiRestResponse register(@RequestParam("userName") String userName,
-                                    @RequestParam("password") String password, @RequestParam("emailAddress") String emailAddress,  @RequestParam("verificationCode") String verificationCode) throws ImoocMallException {
+                                    @RequestParam("password") String password, @RequestParam("emailAddress") String emailAddress,  @RequestParam("verificationCode") String verificationCode) throws ImoocMallException, NoSuchAlgorithmException {
         if (StringUtils.isEmpty(userName)) {
             return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_USER_NAME);
         }

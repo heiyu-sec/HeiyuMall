@@ -2,7 +2,10 @@ package com.heiyu.mall.model.dao;
 
 import com.heiyu.mall.model.pojo.User;
 import io.lettuce.core.dynamic.annotation.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 

@@ -1,0 +1,90 @@
+[09:56:49:809] [WARN] - com.zaxxer.hikari.pool.HikariPool$HouseKeeper.run(HikariPool.java:787) - imooc_mall_datasource - Thread starvation or clock leap detected (housekeeper delta=10h57m53s192ms562µs300ns).
+[10:16:22:740] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[10:16:22:740] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[10:16:22:740] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[10:16:22:804] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[10:16:30:268] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[10:16:30:269] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[10:16:30:269] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[10:16:30:282] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[10:58:53:145] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[10:58:53:145] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[10:58:53:145] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[10:58:53:182] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[10:58:53:285] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[10:58:53:295] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[10:58:55:110] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":null}
+[11:04:19:526] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[11:04:19:526] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:04:19:526] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[11:04:19:572] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[11:04:19:603] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[11:04:19:609] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[11:04:20:530] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":null}
+[11:04:22:660] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[11:04:22:660] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:04:22:660] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[11:04:22:669] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[11:04:22:697] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[11:04:22:705] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[11:04:22:708] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10023,"msg":"非法的邮件地址","data":null}
+[11:06:55:300] [INFO] - org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:55) - Starting MallApplication on whoamiiii with PID 38596 (D:\codefactory\HeiyuMall\heiyu-mall\target\classes started by sectrend1 in D:\codefactory\HeiyuMall)
+[11:06:55:303] [INFO] - org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:651) - No active profile set, falling back to default profiles: default
+[11:06:55:897] [INFO] - org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected(RepositoryConfigurationDelegate.java:246) - Multiple Spring Data modules found, entering strict repository configuration mode!
+[11:06:55:900] [INFO] - org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+[11:06:55:920] [INFO] - org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:184) - Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+[11:06:56:115] [INFO] - org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(PostProcessorRegistrationDelegate.java:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[11:06:56:501] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:92) - Tomcat initialized with port(s): 8083 (http)
+[11:06:56:507] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing ProtocolHandler ["http-nio-8083"]
+[11:06:56:507] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting service [Tomcat]
+[11:06:56:507] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting Servlet engine: [Apache Tomcat/9.0.27]
+[11:06:56:568] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring embedded WebApplicationContext
+[11:06:56:568] [INFO] - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext(ServletWebServerApplicationContext.java:284) - Root WebApplicationContext: initialization completed in 1213 ms
+[11:06:57:502] [INFO] - springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods(PropertySourcedRequestMappingHandlerMapping.java:69) - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[11:06:57:640] [INFO] - org.springframework.scheduling.concurrent.ExecutorConfigurationSupport.initialize(ExecutorConfigurationSupport.java:171) - Initializing ExecutorService 'applicationTaskExecutor'
+[11:06:57:953] [INFO] - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:160) - Context refreshed
+[11:06:57:964] [INFO] - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.start(DocumentationPluginsBootstrapper.java:163) - Found 1 custom documentation plugin(s)
+[11:06:57:983] [INFO] - springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan(ApiListingReferenceScanner.java:41) - Scanning for api listing references
+[11:06:58:187] [INFO] - springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40) - Generating unique operation named: listUsingGET_1
+[11:06:58:212] [INFO] - springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40) - Generating unique operation named: detailUsingGET_1
+[11:06:58:216] [INFO] - springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith(CachingOperationNameGenerator.java:40) - Generating unique operation named: listUsingGET_2
+[11:06:58:280] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Starting ProtocolHandler ["http-nio-8083"]
+[11:06:58:295] [INFO] - org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:204) - Tomcat started on port(s): 8083 (http) with context path ''
+[11:06:58:297] [INFO] - org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:61) - Started MallApplication in 3.219 seconds (JVM running for 5.523)
+[11:07:13:235] [INFO] - org.apache.juli.logging.DirectJDKLog.log(DirectJDKLog.java:173) - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[11:07:13:235] [INFO] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:525) - Initializing Servlet 'dispatcherServlet'
+[11:07:13:241] [INFO] - org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:547) - Completed initialization in 6 ms
+[11:07:13:258] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[11:07:13:258] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:07:13:258] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com3]
+[11:07:13:281] [INFO] - com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:110) - imooc_mall_datasource - Starting...
+[11:07:13:363] [INFO] - com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:123) - imooc_mall_datasource - Start completed.
+[11:07:13:505] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[11:07:15:405] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[11:07:15:420] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[11:07:16:810] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":null}
+[11:07:25:236] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[11:07:25:236] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:07:25:237] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[11:07:25:263] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[11:07:25:291] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[11:07:25:297] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[11:07:26:282] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":null}
+[11:08:07:500] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/login
+[11:08:07:500] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:08:07:500] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [mumuputong, 12345678, org.apache.catalina.session.StandardSessionFacade@1fe4051e]
+[11:08:07:514] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":{"id":14,"username":"mumuputong","password":null,"personalizedSignature":"","role":1,"createTime":1671096533000,"updateTime":1671096533000,"emailAddress":null}}
+[11:08:12:848] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[11:08:12:848] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:08:12:848] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[11:08:12:889] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[11:08:12:908] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[11:08:12:910] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[11:08:12:912] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10025,"msg":"email已经发送，若无法收到，请稍后再试","data":null}
+[11:10:44:996] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:41) - request url:http://127.0.0.1:8083/user/sendEmail
+[11:10:44:996] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:42) - request method:POST
+[11:10:44:996] [INFO] - com.heiyu.mall.filter.WebLogAspect.doBefore(WebLogAspect.java:43) - args : [594549621@qq.com]
+[11:10:45:033] [INFO] - org.redisson.Version.logVersion(Version.java:41) - Redisson 3.13.6
+[11:10:45:048] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 1 connections initialized for /127.0.0.1:6379
+[11:10:45:051] [INFO] - org.redisson.connection.pool.ConnectionPool$1.lambda$run$0(ConnectionPool.java:167) - 24 connections initialized for /127.0.0.1:6379
+[11:10:46:075] [INFO] - com.heiyu.mall.filter.WebLogAspect.doAfterReturning(WebLogAspect.java:48) - return response : {"status":10000,"msg":"SUCCESS","data":null}
