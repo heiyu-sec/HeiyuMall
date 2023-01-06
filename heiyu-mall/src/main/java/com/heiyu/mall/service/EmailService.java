@@ -10,4 +10,6 @@ public interface EmailService {
 
 
     Boolean saveEmailToRedis(String emailAddress, String verificationCode);
+
+    Boolean checkEmailAndCode(String emailAddress, String verificationCode);
 }

@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void register(String userName, String password) throws ImoocMallException, NoSuchAlgorithmException {
+    public void register(String userName, String password,String emailAddress) throws ImoocMallException, NoSuchAlgorithmException {
         //查询用户名是否存在，不允许重名
       User result=  userMapper.selectByName(userName);
       if(result != null){
@@ -35,12 +35,16 @@ public class UserServiceImpl implements UserService {
       }
 
       //写到数据库
-        User user= new User();
+        User user = new User();
         user.setUsername(userName);
-        //user.setPassword(password);
-        user.setPassword(MD5Utils.getMD5Str(password));
+        user.setEmailAddress(emailAddress);
+        try {
+            user.setPassword(MD5Utils.getMD5Str(password));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         int count = userMapper.insertSelective(user);
-        if(count==0){
+        if (count == 0) {
             throw new ImoocMallException(ImoocMallExceptionEnum.INSERT_FAILED);
         }
     }

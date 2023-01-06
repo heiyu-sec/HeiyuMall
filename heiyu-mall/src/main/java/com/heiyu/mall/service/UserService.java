@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 public interface UserService {
     User getUser();
 
-    void register(String userName,String password) throws ImoocMallException, NoSuchAlgorithmException;
+    void register(String userName,String password,String emailAddress) throws ImoocMallException, NoSuchAlgorithmException;
 
     User login(String userName, String password) throws ImoocMallException;
 

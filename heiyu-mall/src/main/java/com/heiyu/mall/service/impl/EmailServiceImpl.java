@@ -31,13 +31,28 @@ public class EmailServiceImpl implements EmailService {
         mailSender.send(simpleMailMessage);
     }
     @Override
-    public Boolean saveEmailToRedis(String emailAddress,String verificationCode ){
+    public Boolean saveEmailToRedis(String emailAddress, String verificationCode){
         RedissonClient client = Redisson.create();
         RBucket<String> bucket = client.getBucket(emailAddress);
         boolean exists = bucket.isExists();
         if (!exists){
             bucket.set(verificationCode,60, TimeUnit.SECONDS);
             return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Boolean checkEmailAndCode(String emailAddress, String verificationCode) {
+        RedissonClient client = Redisson.create();
+        RBucket<String> bucket = client.getBucket(emailAddress);
+        boolean exists = bucket.isExists();
+        if (exists) {
+            String code = bucket.get();
+            //redis里存储的验证码，和用户传过来的一致，则校验通过
+            if (code.equals(verificationCode)) {
+                return true;
+            }
         }
         return false;
     }
