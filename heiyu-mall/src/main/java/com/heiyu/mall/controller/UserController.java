@@ -1,5 +1,7 @@
 package com.heiyu.mall.controller;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallException;
@@ -11,6 +13,7 @@ import com.heiyu.mall.service.UserService;
 
 
 import com.heiyu.mall.util.EmailUtil;
+
 import org.springframework.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Date;
 
 /**
  * 描述：     用户控制器
@@ -131,6 +135,29 @@ public class UserController {
         session.removeAttribute(Constant.IMOOC_MALL_USER);
         return ApiRestResponse.success();
     }
+
+    @GetMapping("/loginWithJwt")
+    @ResponseBody
+    public ApiRestResponse loginWithJwt(@RequestParam String userName, @RequestParam String password) {
+        if (StringUtils.isEmpty(userName)) {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_USER_NAME);
+        }
+        if (StringUtils.isEmpty(password)) {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_PASSWORD);
+        }
+        User user = userService.login(userName, password);
+        //保存用户信息时，不保存密码
+        user.setPassword(null);
+        Algorithm algorithm = Algorithm.HMAC256(Constant.JWT_KEY);
+        String token = JWT.create()
+                .withClaim(Constant.USER_NAME, user.getUsername())
+                .withClaim(Constant.USER_ID, user.getId())
+                .withClaim(Constant.USER_ROLE, user.getRole())
+                //过期时间
+                .withExpiresAt(new Date(System.currentTimeMillis() + Constant.EXPIRE_TIME))
+                .sign(algorithm);
+        return ApiRestResponse.success(token);
+    }
     /**
      * 管理员登录接口
      */
@@ -157,6 +184,8 @@ public class UserController {
             return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_ADMIN);
         }
     }
+
+
 
     /**
      * 发送邮件
