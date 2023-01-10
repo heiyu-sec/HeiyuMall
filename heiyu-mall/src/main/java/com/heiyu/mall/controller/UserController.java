@@ -6,6 +6,7 @@ import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
+import com.heiyu.mall.filter.UserFilter;
 import com.heiyu.mall.model.pojo.User;
 
 import com.heiyu.mall.service.EmailService;
@@ -116,7 +117,8 @@ public class UserController {
     @ResponseBody
     public ApiRestResponse updateUserInfo(HttpSession session, @RequestParam String signature)
             throws ImoocMallException {
-        User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        //User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        User currentUser = UserFilter.currentUser;
         if (currentUser == null) {
             return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_LOGIN);
         }
@@ -216,5 +218,39 @@ public class UserController {
                 return ApiRestResponse.error(ImoocMallExceptionEnum.WRONG_EMAIL);
         }
         }
+
+    /**
+     * 管理员登录接口
+     */
+    @GetMapping("/adminLoginWithJwt")
+    @ResponseBody
+    public ApiRestResponse adminLoginWithJwt(@RequestParam("userName") String userName,
+                                             @RequestParam("password") String password)
+            throws ImoocMallException {
+        if (StringUtils.isEmpty(userName)) {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_USER_NAME);
+        }
+        if (StringUtils.isEmpty(password)) {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_PASSWORD);
+        }
+        User user = userService.login(userName, password);
+        //校验是否是管理员
+        if (userService.checkAdminRole(user)) {
+            //是管理员，执行操作
+            //保存用户信息时，不保存密码
+            user.setPassword(null);
+            Algorithm algorithm = Algorithm.HMAC256(Constant.JWT_KEY);
+            String token = JWT.create()
+                    .withClaim(Constant.USER_NAME, user.getUsername())
+                    .withClaim(Constant.USER_ID, user.getId())
+                    .withClaim(Constant.USER_ROLE, user.getRole())
+                    //过期时间
+                    .withExpiresAt(new Date(System.currentTimeMillis() + Constant.EXPIRE_TIME))
+                    .sign(algorithm);
+            return ApiRestResponse.success(token);
+        } else {
+            return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_ADMIN);
+        }
+    }
     }
 

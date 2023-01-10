@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.common.Constant;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
+import com.heiyu.mall.filter.UserFilter;
 import com.heiyu.mall.model.pojo.Category;
 import com.heiyu.mall.model.pojo.User;
 import com.heiyu.mall.model.request.AddCategoryReq;
@@ -40,7 +41,8 @@ public class CategoryController {
     @ResponseBody
     public ApiRestResponse addCategory(HttpSession session,
                                        @Valid @RequestBody AddCategoryReq addCategoryReq) {
-        User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        //User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        User currentUser = UserFilter.currentUser;
         if (currentUser == null) {
             return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_LOGIN);
         }
@@ -58,7 +60,8 @@ public class CategoryController {
     @PostMapping("admin/category/update")
     @ResponseBody
     public ApiRestResponse updateCategory(@Valid @RequestBody UpdateCategoryReq updateCategoryReq,HttpSession session){
-        User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        //User currentUser = (User) session.getAttribute(Constant.IMOOC_MALL_USER);
+        User currentUser = UserFilter.currentUser;
         if (currentUser == null) {
             return ApiRestResponse.error(ImoocMallExceptionEnum.NEED_LOGIN);
         }

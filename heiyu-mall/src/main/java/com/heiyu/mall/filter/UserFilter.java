@@ -27,7 +27,7 @@ import java.io.PrintWriter;
  * 描述： 用户校验过滤器
  */
 public class UserFilter implements Filter {
-    public static User currentUser;
+    public static User currentUser = new User();
 
     @Autowired
     UserService userService;
@@ -49,7 +49,7 @@ public class UserFilter implements Filter {
                         (HttpServletResponse) servletResponse).getWriter();
                 out.write("{\n"
                         + "    \"status\": 10007,\n"
-                        + "    \"msg\": \"NEED_LOGIN\",\n"
+                        + "    \"msg\": \"NEED_JWT_TOKEN\",\n"
                         + "    \"data\": null\n"
                         + "}");
                 out.flush();
@@ -61,6 +61,7 @@ public class UserFilter implements Filter {
             JWTVerifier verifier = JWT.require(algorithm).build();
             try {
                 DecodedJWT jwt = verifier.verify(token);
+
                 currentUser.setId(jwt.getClaim(Constant.USER_ID).asInt());
                 currentUser.setRole(jwt.getClaim(Constant.USER_ROLE).asInt());
                 currentUser.setUsername(jwt.getClaim(Constant.USER_NAME).asString());
