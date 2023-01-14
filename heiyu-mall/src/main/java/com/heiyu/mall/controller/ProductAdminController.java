@@ -107,4 +107,19 @@ public class ProductAdminController {
         return ApiRestResponse.success(pageInfo);
     }
 
+
+    @ApiOperation("后台批量上传商品接口")
+    @PostMapping("/admin/upload/product")
+    public ApiRestResponse uploadProduct(@RequestParam("file") MultipartFile multipartFile) throws IOException {
+        String newFileName = uploadService.getNewFileName(multipartFile);
+        //创建文件
+        File fileDirectory = new File(Constant.FILE_UPLOAD_DIR);
+        File destFile = new File(Constant.FILE_UPLOAD_DIR + newFileName);
+        uploadService.createFile(multipartFile, fileDirectory, destFile);
+        productService.addProductByExcel(destFile);
+        return ApiRestResponse.success();
+    }
+
+
+
 }

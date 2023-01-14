@@ -8,6 +8,7 @@ import com.heiyu.mall.model.request.AddProductReq;
 import com.heiyu.mall.model.request.ProductListReq;
 import com.heiyu.mall.model.vo.CategoryVO;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -29,4 +30,6 @@ public interface ProductService {
     Product detail(Integer id);
 
     PageInfo list(ProductListReq productListReq);
+
+    void addProductByExcel(File destFile);
 }

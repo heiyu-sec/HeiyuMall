@@ -14,13 +14,23 @@ import com.heiyu.mall.model.vo.CategoryVO;
 import com.heiyu.mall.service.CategoryService;
 import com.heiyu.mall.service.ProductService;
 
+
+import com.heiyu.mall.util.ExcelUtil;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -126,6 +136,8 @@ public class PorductServiceImpl implements ProductService {
         return pageInfo;
     }
 
+
+
     private void getCategoryIds(List<CategoryVO> categoryVOSList,ArrayList<Integer> categoryIds){
         for (int i = 0; i < categoryVOSList.size(); i++) {
             CategoryVO categoryVO =  categoryVOSList.get(i);
@@ -135,5 +147,62 @@ public class PorductServiceImpl implements ProductService {
             }
             
         }
+    }
+    @Override
+    public void addProductByExcel(File destFile) {
+
+    }
+
+    private List<Product> readProductsFromExcel(File excelFile) throws IOException {
+        ArrayList<Product> listProducts = new ArrayList<>();
+        FileInputStream inputStream = new FileInputStream(excelFile);
+
+        XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
+        XSSFSheet firstSheet = workbook.getSheetAt(0);
+        Iterator<Row> iterator = firstSheet.iterator();
+        while (iterator.hasNext()) {
+            Row nextRow = iterator.next();
+            Iterator<org.apache.poi.ss.usermodel.Cell> cellIterator = nextRow.cellIterator();
+            Product aProduct = new Product();
+
+            while (cellIterator.hasNext()) {
+                Cell nextCell = cellIterator.next();
+                int columnIndex = nextCell.getColumnIndex();
+
+                switch (columnIndex) {
+                    case 0:
+                        aProduct.setName((String) ExcelUtil.getCellValue(nextCell));
+                        break;
+                    case 1:
+                        aProduct.setImage((String) ExcelUtil.getCellValue(nextCell));
+                        break;
+                    case 2:
+                        aProduct.setDetail((String) ExcelUtil.getCellValue(nextCell));
+                        break;
+                    case 3:
+                        Double cellValue = (Double) ExcelUtil.getCellValue(nextCell);
+                        aProduct.setCategoryId(cellValue.intValue());
+                        break;
+                    case 4:
+                        cellValue = (Double) ExcelUtil.getCellValue(nextCell);
+                        aProduct.setPrice(cellValue.intValue());
+                        break;
+                    case 5:
+                        cellValue = (Double) ExcelUtil.getCellValue(nextCell);
+                        aProduct.setStock(cellValue.intValue());
+                        break;
+                    case 6:
+                        cellValue = (Double) ExcelUtil.getCellValue(nextCell);
+                        aProduct.setStatus(cellValue.intValue());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            listProducts.add(aProduct);
+        }
+        workbook.close();
+        inputStream.close();
+        return listProducts;
     }
 }
