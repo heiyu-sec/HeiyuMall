@@ -9,6 +9,7 @@ import com.heiyu.mall.model.pojo.Product;
 import com.heiyu.mall.model.request.AddProductReq;
 import com.heiyu.mall.model.request.UpdateProductReq;
 import com.heiyu.mall.service.ProductService;
+import com.heiyu.mall.service.UploadService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.BeanUtils;
@@ -33,6 +34,9 @@ import java.util.UUID;
 public class ProductAdminController {
     @Autowired
     ProductService productService;
+
+    @Autowired
+    UploadService uploadService;
 
     @PostMapping("admin/product/add")
     public ApiRestResponse addProduct(@Valid @RequestBody AddProductReq addProductReq) {

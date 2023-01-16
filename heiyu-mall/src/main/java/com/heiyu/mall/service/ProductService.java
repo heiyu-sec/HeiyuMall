@@ -9,6 +9,7 @@ import com.heiyu.mall.model.request.ProductListReq;
 import com.heiyu.mall.model.vo.CategoryVO;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -31,5 +32,5 @@ public interface ProductService {
 
     PageInfo list(ProductListReq productListReq);
 
-    void addProductByExcel(File destFile);
+    void addProductByExcel(File destFile) throws IOException;
 }

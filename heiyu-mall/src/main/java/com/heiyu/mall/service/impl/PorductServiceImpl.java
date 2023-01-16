@@ -148,9 +148,21 @@ public class PorductServiceImpl implements ProductService {
             
         }
     }
-    @Override
-    public void addProductByExcel(File destFile) {
 
+    @Override
+    public void addProductByExcel(File destFile) throws IOException {
+        List<Product> products = readProductsFromExcel(destFile);
+        for (int i = 0; i < products.size(); i++) {
+            Product product = products.get(i);
+            Product productOld = productMapper.selectByName(product.getName());
+            if (productOld != null) {
+                throw new ImoocMallException(ImoocMallExceptionEnum.NAME_EXISTED);
+            }
+            int count = productMapper.insertSelective(product);
+            if (count == 0) {
+                throw new ImoocMallException(ImoocMallExceptionEnum.CREATE_FAILED);
+            }
+        }
     }
 
     private List<Product> readProductsFromExcel(File excelFile) throws IOException {
