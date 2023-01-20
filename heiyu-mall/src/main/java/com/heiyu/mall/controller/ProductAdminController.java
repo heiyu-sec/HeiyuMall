@@ -124,6 +124,11 @@ public class ProductAdminController {
         return ApiRestResponse.success();
     }
 
-
+    @PostMapping("/admin/upload/image")
+    public ApiRestResponse uploadImage(HttpServletRequest httpServletRequest,
+                                       @RequestParam("file") MultipartFile file) throws IOException {
+        String result = uploadService.uploadImage(file);
+        return ApiRestResponse.success(result);
+    }
 
 }
