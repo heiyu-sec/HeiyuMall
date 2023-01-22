@@ -3,6 +3,7 @@ package com.heiyu.mall.controller;
 import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.common.ApiRestResponse;
 import com.heiyu.mall.common.Constant;
+import com.heiyu.mall.common.ValidList;
 import com.heiyu.mall.exctption.ImoocMallException;
 import com.heiyu.mall.exctption.ImoocMallExceptionEnum;
 import com.heiyu.mall.model.pojo.Product;
@@ -24,6 +25,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -130,5 +132,34 @@ public class ProductAdminController {
         String result = uploadService.uploadImage(file);
         return ApiRestResponse.success(result);
     }
+    @ApiOperation("后台批量更新商品")
+    @PostMapping("/admin/product/batchUpdate")
+    public ApiRestResponse batchUpdateProduct(@Valid @RequestBody List<UpdateProductReq> updateProductReqList) {
+        for (int i = 0; i < updateProductReqList.size(); i++) {
+            UpdateProductReq updateProductReq = updateProductReqList.get(i);
+            //方法一，手动校验
+            if (updateProductReq.getPrice() < 1) {
+                throw new ImoocMallException(ImoocMallExceptionEnum.PRICE_TOO_LOW);
+            }
+            if (updateProductReq.getStock() > 10000) {
+                throw new ImoocMallException(ImoocMallExceptionEnum.STOCK_TOO_MANY);
+            }
+            Product product = new Product();
+            BeanUtils.copyProperties(updateProductReq, product);
+            productService.update(product);
+        }
+        return ApiRestResponse.success();
+    }
 
+    @ApiOperation("后台批量更新商品，ValidList验证")
+    @PostMapping("/admin/product/batchUpdate2")
+    public ApiRestResponse batchUpdateProduct2(@Valid @RequestBody ValidList<UpdateProductReq> updateProductReqList) {
+        for (int i = 0; i < updateProductReqList.size(); i++) {
+            UpdateProductReq updateProductReq = updateProductReqList.get(i);
+            Product product = new Product();
+            BeanUtils.copyProperties(updateProductReq, product);
+            productService.update(product);
+        }
+        return ApiRestResponse.success();
+    }
 }
