@@ -16,6 +16,7 @@ import io.swagger.annotations.ApiResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,6 +34,7 @@ import java.util.UUID;
  */
 
 @RestController
+@Validated
 public class ProductAdminController {
     @Autowired
     ProductService productService;
@@ -154,6 +156,18 @@ public class ProductAdminController {
     @ApiOperation("后台批量更新商品，ValidList验证")
     @PostMapping("/admin/product/batchUpdate2")
     public ApiRestResponse batchUpdateProduct2(@Valid @RequestBody ValidList<UpdateProductReq> updateProductReqList) {
+        for (int i = 0; i < updateProductReqList.size(); i++) {
+            UpdateProductReq updateProductReq = updateProductReqList.get(i);
+            Product product = new Product();
+            BeanUtils.copyProperties(updateProductReq, product);
+            productService.update(product);
+        }
+        return ApiRestResponse.success();
+    }
+
+    @ApiOperation("后台批量更新商品，@Validated验证")
+    @PostMapping("/admin/product/batchUpdate3")
+    public ApiRestResponse batchUpdateProduct3(@Valid @RequestBody List<UpdateProductReq> updateProductReqList) {
         for (int i = 0; i < updateProductReqList.size(); i++) {
             UpdateProductReq updateProductReq = updateProductReqList.get(i);
             Product product = new Product();
