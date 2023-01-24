@@ -1,6 +1,9 @@
 package com.heiyu.mall.model.dao;
 
 import com.heiyu.mall.model.pojo.Order;
+import com.heiyu.mall.model.query.OrderStatisticsQuery;
+import com.heiyu.mall.model.vo.OrderStatisticsVO;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,5 +28,5 @@ public interface OrderMapper {
 
     List<Order> selectAllForAdmin();
 
-
+    List<OrderStatisticsVO> selectOrderStatistics(@Param("query") OrderStatisticsQuery query);
 }

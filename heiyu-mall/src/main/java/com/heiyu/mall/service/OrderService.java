@@ -3,8 +3,10 @@ package com.heiyu.mall.service;
 import com.github.pagehelper.PageInfo;
 import com.heiyu.mall.model.request.CreateOrderReq;
 import com.heiyu.mall.model.vo.CartVO;
+import com.heiyu.mall.model.vo.OrderStatisticsVO;
 import com.heiyu.mall.model.vo.OrderVO;
 
+import java.util.Date;
 import java.util.List;
 
 public interface OrderService {
@@ -28,4 +30,6 @@ public interface OrderService {
 
     //发货
     void finish(String orderNo);
+
+    List<OrderStatisticsVO> statistics(Date startDate, Date endDate);
 }

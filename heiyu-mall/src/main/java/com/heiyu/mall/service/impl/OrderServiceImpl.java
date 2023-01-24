@@ -14,9 +14,11 @@ import com.heiyu.mall.model.dao.ProductMapper;
 import com.heiyu.mall.model.pojo.Order;
 import com.heiyu.mall.model.pojo.OrderItem;
 import com.heiyu.mall.model.pojo.Product;
+import com.heiyu.mall.model.query.OrderStatisticsQuery;
 import com.heiyu.mall.model.request.CreateOrderReq;
 import com.heiyu.mall.model.vo.CartVO;
 import com.heiyu.mall.model.vo.OrderItemVO;
+import com.heiyu.mall.model.vo.OrderStatisticsVO;
 import com.heiyu.mall.model.vo.OrderVO;
 import com.heiyu.mall.service.CartService;
 import com.heiyu.mall.service.OrderService;
@@ -345,4 +347,14 @@ public class OrderServiceImpl implements OrderService {
             throw new ImoocMallException(ImoocMallExceptionEnum.FINISH_WRONG_ORDER_STATUS);
         }
     }
+
+    @Override
+    public List<OrderStatisticsVO> statistics(Date startDate, Date endDate) {
+        OrderStatisticsQuery orderStatisticsQuery = new OrderStatisticsQuery();
+        orderStatisticsQuery.setStartDate(startDate);
+        orderStatisticsQuery.setEndDate(endDate);
+        List<OrderStatisticsVO> orderStatisticsVOS = orderMapper.selectOrderStatistics(orderStatisticsQuery);
+        return orderStatisticsVOS;
+    }
+
 }
