@@ -63,8 +63,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     OrderItemMapper orderItemMapper;
 
-    @Value("${file.upload.ip}")
-    String ip;
+    @Value("${file.upload.uri}")
+    String uri;
 
     @Autowired
     UserService userService;
@@ -153,8 +153,8 @@ public class OrderServiceImpl implements OrderService {
             CartVO cartVO =  cartVOList.get(i);
             cartMapper.deleteByPrimaryKey(cartVO.getId());
         }
-        
-    }       
+
+    }
 
     private List<OrderItem> cartVOListToOrderItemList(List<CartVO> cartVOList) {
         List<OrderItem> orderItemList = new ArrayList<>();
@@ -267,7 +267,7 @@ public class OrderServiceImpl implements OrderService {
     public String qrcode(String orderNo){
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        String address = ip+":"+request.getLocalPort();
+        String address = uri+":"+request.getLocalPort();
         String payUrl = "http://"+address+"/pay?orderNo="+orderNo;
         try {
             QRCodeGenerator.generateQRCodeImage(payUrl,350,350,Constant.FILE_UPLOAD_DIR+orderNo+".png");
@@ -292,7 +292,7 @@ public class OrderServiceImpl implements OrderService {
             order.setPayTime(new Date());
             orderMapper.updateByPrimaryKeySelective(order);
         }else {
-            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+            throw new ImoocMallException(ImoocMallExceptionEnum.PAY_WRONG_ORDER_STATUS);
 
         }
     }
@@ -320,7 +320,7 @@ public class OrderServiceImpl implements OrderService {
             order.setDeliveryTime(new Date());
             orderMapper.updateByPrimaryKeySelective(order);
         } else {
-            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+            throw new ImoocMallException(ImoocMallExceptionEnum.DELIVER_WRONG_ORDER_STATUS);
         }
     }
 
@@ -342,7 +342,7 @@ public class OrderServiceImpl implements OrderService {
             order.setEndTime(new Date());
             orderMapper.updateByPrimaryKeySelective(order);
         } else {
-            throw new ImoocMallException(ImoocMallExceptionEnum.WRONG_ORDER_STATUS);
+            throw new ImoocMallException(ImoocMallExceptionEnum.FINISH_WRONG_ORDER_STATUS);
         }
     }
 }
