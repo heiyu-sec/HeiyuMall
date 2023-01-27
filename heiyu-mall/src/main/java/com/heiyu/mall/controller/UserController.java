@@ -18,10 +18,7 @@ import com.heiyu.mall.util.EmailUtil;
 import org.springframework.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.security.NoSuchAlgorithmException;
@@ -32,6 +29,7 @@ import java.util.Date;
  * 描述：     用户控制器
  */
 @Controller
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 public class UserController {
     @Autowired
     UserService userService;
@@ -94,6 +92,7 @@ public class UserController {
      */
     @PostMapping("/login")
     @ResponseBody
+
     public ApiRestResponse login(@RequestParam("userName") String userName,
                                  @RequestParam("password") String password, HttpSession session)
             throws ImoocMallException {
